@@ -10,17 +10,13 @@
           %li
             = link_to t("menu.home"), root_path
           %li
-            %a(href="#")
-              Pricing
+            = link_to "Pricing", user_pricing_path
           %li
-            %a(href="#")
-              How Works
+            = link_to "How it Works", user_how_it_works_path
           %li
-            %a(href="#")
-              Contact Us
+            = link_to "Contact Us", user_contact_us_path
           %li
-            %a(href="#")
-              Help
+            = link_to "FAQ", user_help_path
         %ul(class="nav pull-right")
           - if current_user
             %li
