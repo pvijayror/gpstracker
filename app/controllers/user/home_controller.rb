@@ -43,15 +43,19 @@ class User::HomeController < ApplicationController
   end
 
   def reports
+    flash[:alert] = "(Prototipo)" if current_user
   end
 
   def lineal_regresion
+    flash[:alert] = "(Prototipo)" if current_user
   end
 
   def dependency_analysis
+    flash[:alert] = "(Prototipo)" if current_user
   end
 
   def stationality_analysis
+    flash[:alert] = "(Prototipo)" if current_user
   end
 
 end
