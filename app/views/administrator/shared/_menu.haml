@@ -8,8 +8,7 @@
       .container.nav-collapse
         %ul.nav
           %li
-            = link_to t("menu.dashboard"), administrator_root_path
-
+            = link_to t("menu.home"), administrator_root_path
         %ul(class="nav pull-right")
           - if current_administrator
             %li
@@ -19,16 +18,3 @@
           - else
             %li
               = link_to t("common.my_account"), new_administrator_session_path
-          
-/ = content_for :javascript do
-/   :javascript
-/     $(".#{current_controller}_controller").addClass("active");
-/     $(".#{I18n.locale}_locale").addClass("active");
-/   - if search?
-/     :javascript
-/       $("#search_button").click(
-/         function()
-/         {
-/           $("#search_form").submit();
-/         }
-/       );
