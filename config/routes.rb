@@ -61,7 +61,11 @@ Gpstracker::Application.routes.draw do
     match '/contact_us' => 'home#contact_us'
     match '/help' => 'home#help'
 
+    match '/reports' => 'home#reports'
     match '/map_devices' => 'home#map_devices'
+    match '/lineal_regresion' => 'home#lineal_regresion'
+    match '/dependency_analysis' => 'home#dependency_analysis'
+    match '/stationality_analysis' => 'home#stationality_analysis'
     match '/devices' => 'home#devices'
     match '/generate_graph' => 'home#generate_graph'
     match '/variable_history' => 'home#variable_history'

@@ -42,4 +42,16 @@ class User::HomeController < ApplicationController
     flash[:alert] = "(Prototipo)" if current_user
   end
 
+  def reports
+  end
+
+  def lineal_regresion
+  end
+
+  def dependency_analysis
+  end
+
+  def stationality_analysis
+  end
+
 end
