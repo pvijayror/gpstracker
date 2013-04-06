@@ -1,0 +1,18 @@
+
+.login
+  %h2 New Device
+  %form
+    %div
+      = label_tag :serial_number
+      %br
+      = text_field_tag :serial_number
+    %div
+      = label_tag :token 
+      %br
+      = password_field :token, :token 
+
+
+    %div
+      = link_to "Create", administrator_devices_path, :class => "btn btn-success"
+
+

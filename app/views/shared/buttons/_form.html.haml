@@ -1,0 +1,3 @@
+.form-actions
+  = f.submit t("buttons.send"), :class => "btn btn-success"
+  = link_to t("buttons.cancel"), back, :class => "btn btn-danger", "data-dismiss" => "modal" if has_back

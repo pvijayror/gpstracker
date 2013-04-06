@@ -1,0 +1,4 @@
+%h2= t "activerecord.models.devices"
+= index_grid devices, [:id, :serial_number, :token], :show => false, :edit => false, :destroy => false, :new => false
+
+= link_to t("new_device"), administrator_new_device_prot_path, :class => "btn btn-success"

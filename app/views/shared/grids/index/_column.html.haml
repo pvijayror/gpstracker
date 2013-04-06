@@ -1,0 +1,23 @@
+- value = (value = instance.send(field) rescue nil).nil? ? "&nbsp;" : value
+- case value.class.name
+  - when "FalseClass", "TrueClass"
+    %td.center
+      = t "actions.#{value ? "yes" : "no"}"
+  - when "Time"
+    %td.center
+      = l value, :format => :short
+  - when "Array", "String"
+    - value = value.join(", ") if "Array" == value.class.name
+    %td.left
+      - if value.size >= 50
+        = raw truncate(value, :length => 50, :omission => "")
+        %a{:title => value, :rel => "tooltip"}
+          \...
+      - else
+        = raw value
+  - when "BigDecimal", "Bignum", "Fixnum", "Float"
+    %td.right
+      = value
+  - else
+    %td.left
+      = raw value

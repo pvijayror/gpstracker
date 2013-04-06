@@ -1,0 +1,67 @@
+
+en:
+  project:
+    title: "PRAIG"
+    url: "https://praig.com"
+
+  actions:
+    actions: "Actions"
+    add: "Add"
+    are_you_sure: "Are you sure?"
+    back: "Back"
+    check_all: "Check all"
+    created_at: "Created at"
+    destroy: "Delete"
+    edit: "Edit"
+    id: "ID"
+    import: "Import"
+    loading: "Loading"
+    move: "Move"
+    new: "New"
+    please_wait: "Please wait a moment, site is loading"
+    profile: "Profile"
+    remove: "Remove"
+    show: "Show"
+    uncheck_all: "Uncheck all"
+    updated_at: "Updated at"
+    "no": "No"
+    "yes": "Yes"
+
+  alerts:
+    updated_successfully: "Updated successfully!"
+    created_successfully: "Created successfully!"
+    destroyed_successfully: "Successfully deleted!"
+
+  common:
+    my_account: "My Account"
+    sign_out: "Sign Out"
+
+  errors:
+    notices:
+      index: "Page not found"
+
+  buttons:
+    cancel: "Cancel"
+    new: "New"
+    send: "Send"
+
+  controllers:
+    devices: 
+      index: "Devices"
+      show: "Device"
+      new: "New Device"
+
+  menu:
+    home: "Home"
+    devices: "Devices"
+    dashboard: "Dashboard"
+
+  activerecord:
+    models:
+      device: "Device"
+    attributes:
+      device:
+        id: "ID"
+        serial_number: "Serial Number"
+        user_id: "User"
+        token: "Token"

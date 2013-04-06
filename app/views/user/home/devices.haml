@@ -1,0 +1,44 @@
+
+%h1 Dispositivos
+
+.container
+
+
+  %table.table.table-bordered.table-condensed
+    %thead
+      %tr
+        %th ID
+        %th Serial Number
+        %th Token
+        %th Active
+    %tbody
+      %tr
+        %td 1
+        %td 100973621
+        %td 4ythkre83766y32
+        %td Yes
+    %tbody
+      %tr
+        %td 2
+        %td 100973621
+        %td 4ythkre83766y32
+        %td Yes
+    %tbody
+      %tr
+        %td 3
+        %td 100973621
+        %td 4ythkre83766y32
+        %td Yes
+    %tbody
+      %tr
+        %td 4
+        %td 100973621
+        %td 4ythkre83766y32
+        %td Yes
+
+= link_to "Show Location of all Devices", user_map_devices_path, :class => "btn btn-success"
+
+= link_to "Watch Measurement History", user_variable_history_path, :class => "btn btn-success"
+%br
+%br
+= link_to "Back", user_dashboard_path, :class => "btn"

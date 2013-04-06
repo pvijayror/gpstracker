@@ -1,0 +1,11 @@
+= title c_t(:index) unless no_title
+%table.table.table-striped.table-condensed.table-striped
+  %thead
+    %tr
+      = render :partial => "shared/grids/title", :collection => fields
+      %th
+        = t "actions.actions"
+  %tbody
+    = render :partial => "shared/grids/index/row", :collection => instance, :as => "instance", :locals => {:fields => fields, :new => new, :show => show, :edit => edit, :destroy => destroy, :association => association}
+= will_paginate instance if paginate
+= new_button if new

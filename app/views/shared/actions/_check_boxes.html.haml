@@ -1,0 +1,41 @@
+.btn-group.check_boxes_actions
+  %i.icon-arrow-up
+  %button.btn.btn-mini.dropdown-toggle{"data-toggle" => "dropdown"}
+    = t "actions.actions"
+    %b.caret
+  %ul.dropdown-menu
+    %li
+      %a.check_all
+        %i.icon-ok
+        = t "actions.check_all"
+    %li
+      %a.uncheck_all
+        %i.icon-remove
+        = t "actions.uncheck_all"
+= content_for :javascript do
+  :javascript
+    // Check / Uncheck all
+    function check_uncheck_all(that, check)
+    {
+      $(that).parent().parent().parent().parent().find("input[type=checkbox]").attr("checked", check);
+    }
+
+    $(document).ready(
+      function()
+      {
+        // Check all
+        $("a.check_all").click(
+          function()
+          {
+            check_uncheck_all(this, true)
+          }
+        );
+        // Uncheck all
+        $("a.uncheck_all").click(
+          function()
+          {
+            check_uncheck_all(this, false)
+          }
+        );
+      }
+    )

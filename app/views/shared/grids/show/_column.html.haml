@@ -1,0 +1,13 @@
+%td.center.cols_3
+  - value = (value = instance.send(field) rescue nil).nil? ? "&nbsp;" : value
+  - case value.class.name
+    - when "FalseClass", "TrueClass"
+      = t "actions.#{value ? "yes" : "no"}"
+    - when "Time"
+      = l value, :format => :short
+    - when "String"
+      = raw value
+    - when "BigDecimal", "Bignum", "Fixnum", "Float"
+      = value
+    - else
+      = raw value

@@ -1,0 +1,10 @@
+.container
+  .row-fluid
+    %form.form-inline
+      %input.input-small{:type => "text", :placeholder => "Device"} 
+      %button(type="submit" class="btn") Filter
+  .row-fluid
+    .map
+      %img(src="/assets/map.png")
+
+  = link_to "Back", :back, :class => "btn"

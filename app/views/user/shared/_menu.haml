@@ -1,0 +1,45 @@
+.navbar.navbar-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      .container.nav-collapse
+        %ul.nav
+          %li
+            = link_to t("menu.home"), root_path
+          %li
+            %a(href="#")
+              Pricing
+          %li
+            %a(href="#")
+              How Works
+          %li
+            %a(href="#")
+              Contact Us
+          %li
+            %a(href="#")
+              Help
+        %ul(class="nav pull-right")
+          - if current_user
+            %li
+              = link_to t("common.my_account"), user_dashboard_path
+            %li
+              = link_to t("common.sign_out"), destroy_user_session_path
+          - else
+            %li
+              = link_to t("common.my_account"), new_user_session_path
+          
+/ = content_for :javascript do
+/   :javascript
+/     $(".#{current_controller}_controller").addClass("active");
+/     $(".#{I18n.locale}_locale").addClass("active");
+/   - if search?
+/     :javascript
+/       $("#search_button").click(
+/         function()
+/         {
+/           $("#search_form").submit();
+/         }
+/       );

@@ -1,0 +1,4 @@
+%tr
+= render :partial => "shared/grids/index/column", :collection => fields, :as => "field", :locals => {:instance => instance}
+%td.center
+  = actions instance, :show => show, :edit => edit, :destroy => destroy, :action => "index", :association => association

@@ -1,0 +1,14 @@
+= link_to raw(%|<i class="icon-pencil icon-white"></i>&nbsp;#{t("actions.edit")}|), edit, :class => "btn btn-warning" if edit
+= link_to raw(%|<i class="icon-trash icon-white"></i>&nbsp;#{t("actions.destroy")}|), destroy, :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => t("actions.are_you_sure"))}", :class => "btn btn-danger" if destroy
+- if defined?(associations) && !associations.nil?
+  - associations.each do |association|
+    -# - if test_singularity(association.to_s)
+    - if instance.send("#{association}").nil?
+      = link_to raw(%|<i class="icon-file icon-white"></i>&nbsp;#{t("actions.create_#{association.to_s}")}|), send("new_#{instance.class.to_s.downcase}_#{association}_path", instance), :class => "btn btn-success" 
+    - else
+      = link_to raw(%|<i class="icon-eye-open icon-white"></i>&nbsp;#{t("actions.show_#{association.to_s}")}|), send("#{instance.class.to_s.downcase}_#{association}_path", instance, instance.send("#{association}")), :class => "btn btn-info"
+    -# - else
+    -#  - if !instance.send("#{association}").nil?
+    -#    = link_to raw(%|<i class="icon-eye-open icon-white"></i>&nbsp;#{t("actions.show_#{association.to_s}")}|), send("#{instance.class.to_s.downcase}_#{association}_path", instance), :class => "btn btn-info"
+
+

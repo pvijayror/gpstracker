@@ -1,0 +1,19 @@
+= title c_t(:show)
+%table.table.table-striped.table-condensed.table-striped
+  %thead
+    %tr
+      %th
+        = t "actions.id"
+      %th
+        = t "actions.created_at"
+      %th
+        = t "actions.updated_at"
+  %tbody
+    = render :partial => "shared/grids/show/row", :locals => {:fields => [:id, :created_at, :updated_at], :instance => instance}
+  - fields.in_groups_of(3, "").each do |fields|
+    %thead
+      %tr
+        = render :partial => "shared/grids/title", :collection => fields, :locals => {:only_text => true}
+    %tbody
+      = render :partial => "shared/grids/show/row", :locals => {:fields => fields, :instance => instance}
+= actions instance, :edit => edit, :destroy => destroy, :association => association
