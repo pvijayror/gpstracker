@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 1.5
+  variation_constant: 1.5
+  error_quotient: MyString
+
+two:
+  value: 1.5
+  variation_constant: 1.5
+  error_quotient: MyString

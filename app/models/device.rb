@@ -1,6 +1,8 @@
 class Device < ActiveRecord::Base
   attr_accessible :serial_number, :token, :user_id, :disabled
 
+  has_many :collected_measurements
+
   class << self
     def find_for_authentication serial_number
       Device.find_by_serial_number(serial_number)

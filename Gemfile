@@ -29,6 +29,7 @@ gem 'cancan'
 gem "haml-rails"
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
+gem 'jquery-datatables-rails', git: 'https://github.com/rweng/jquery-datatables-rails.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

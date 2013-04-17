@@ -8,6 +8,7 @@ development:
   database: geotracking_development
   pool: 5
   timeout: 5000
-  password: 'razm'
+  user: 'root'
+  password: 'root'
 
 

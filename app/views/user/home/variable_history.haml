@@ -1,5 +1,6 @@
 %h2 Measurement Variables History
 %br
+
 %h3 Tools
 %form.form-inline
   %input.input-small{:type => "text", :placeholder => "Variable 1"} 
@@ -18,18 +19,25 @@
 %br
 %br
 
+
 .container
 
 
-  %table.table.table-striped.table-condensed
+  %table.table.table-striped.table-condensed(class="datatable")
     %thead
       %tr
         %th Device Serial
         %th Date
         %th Time
-        %th Variable 1
-        %th variable 2
-        %th Variable 3
+        %th 
+          %input(type="checkbox" name="variable1" value="v1")
+            Variable 1
+        %th 
+          %input(type="checkbox" name="variable1" value="v1")
+            Variable 2
+        %th
+          %input(type="checkbox" name="variable1" value="v1")
+            Variable 3
         %th Acciones
     %tbody
       %tr
@@ -171,3 +179,4 @@
 
   = link_to "Back", user_dashboard_path, :class => "btn"     
   = link_to "Generate Graph", user_generate_graph_path, :class => "btn btn-info"
+
