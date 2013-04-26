@@ -1,0 +1,2 @@
+module User::CollectedMeasurementsHelper
+end

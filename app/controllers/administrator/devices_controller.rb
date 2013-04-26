@@ -37,7 +37,7 @@ class Administrator::DevicesController < ApplicationController
 #### PROTOTYPES ####
 
   def new_prot
-    flash[:alert] = "(Prototipo)"
+    
   end
 
 

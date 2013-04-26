@@ -14,3 +14,5 @@
 /log/*.log
 /tmp
 /gpstracker/config/database.yml
+/config/database.yml
+config/database.yml

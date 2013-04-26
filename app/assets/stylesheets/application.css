@@ -11,6 +11,7 @@
  *= require nivo-slider
  *= require_self
  *= require_tree .
- *= require dataTables/jquery.dataTables
- *= require dataTables/jquery.dataTables.bootstrap
+ *= require gmaps4rails
+ *= #require dataTables/jquery.dataTables
+ *= #require dataTables/jquery.dataTables.bootstrap
  */

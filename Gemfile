@@ -22,6 +22,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'gmaps4rails'
+gem "geocoder"
 gem 'bootstrap-will_paginate'
 gem 'jquery-rails'
 gem 'devise'

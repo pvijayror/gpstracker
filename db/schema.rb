@@ -82,8 +82,9 @@ ActiveRecord::Schema.define(:version => 20130411033549) do
     t.float    "value"
     t.float    "variation_constant"
     t.float    "error_quotient"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "collected_measurement_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
 end
