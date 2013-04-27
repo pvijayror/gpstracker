@@ -1,7 +1,6 @@
-%table.table.table-bordered.table-condensed
+%table.table.table-stripped.table-condensed
   %thead
     %tr
-      %th ID
       %th Serial Number
       %th Longitude
       %th Latitude
@@ -11,12 +10,14 @@
   %tbody
     - devices.each do |device|
       %tr
-        %td= device.id
         %td= device.serial_number
         %td= device.collected_measurements.last.longitude rescue "-"
         %td= device.collected_measurements.last.latitude  rescue "-"
         %td= "Address geodecoded"
-        %td= link_to "Show in Map", user_device_location_path(:device_id => device.id), :class => "btn btn-small btn-success"
+        %td
+          = link_to "Show in Map", user_device_location_path(:device_id => device.id), :class => "btn btn-small btn-success"
+          = link_to "Start Tracking", "#", :class => "btn btn-small btn-info"
+          = link_to "Show Trace", "#", :class => "btn btn-small btn-info"
 
 = link_to "Register Device", register_device_user_devices_path, :class => "btn btn-small btn-info"
 = link_to "Show all in Map", location_user_devices_path(:all => true), :class => "btn btn-small btn-success"
