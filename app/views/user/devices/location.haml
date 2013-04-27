@@ -1,3 +1,4 @@
 .container
   .row-fluid
-    = gmaps4rails(@json)
+    = gmaps4rails(@json) if !@json.nil? 
+    = link_to "Back", user_devices_path, :class => "btn btn-warning"

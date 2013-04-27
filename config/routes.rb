@@ -57,6 +57,9 @@ Gpstracker::Application.routes.draw do
   namespace :user do
     resources :devices do
       get 'location'
+      collection do
+        get 'location'
+      end
     end
     match '/dashboard' => 'home#dashboard'
     match '/pricing' => 'home#pricing'

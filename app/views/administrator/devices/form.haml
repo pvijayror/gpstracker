@@ -1,9 +1,12 @@
 =#title device.new_record? ? "c_t(:new)" : "#{device.id}"
 
-=simple_form_for(device, :html => {:class => 'form-horizontal' }) do |f|
-  =f.input :serial_number
-  =f.input :token
+.login
+  %h2 New Device
+  =simple_form_for([current_administrator, device], :html => {:class => 'form-horizontal' }) do |f|
+    =f.input :serial_number
+    %br
+    =f.input :token
 
-  .form-actions
-    =f.button :submit, :class => 'btn-primary'
-    =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"
+    .form-actions
+      =f.button :submit, :class => 'btn-primary'
+      =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"
