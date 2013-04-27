@@ -5,7 +5,6 @@ class CreateCollectedMeasurements < ActiveRecord::Migration
       t.float :longitude
       t.float :latitude
       t.string :token
-
       t.timestamps
     end
   end
