@@ -4,11 +4,12 @@ class User::DevicesController < ApplicationController
     if params[:all].blank?
       @json = Device.find_by_id(params[:device_id]).collected_measurements.last.to_gmaps4rails rescue nil
     else
-      devices = Device.all
+      devices = current_user.devices
       collected_measurements = Array.new
       devices.each do |device|
         collected_measurements << device.collected_measurements.last if !device.collected_measurements.last.nil?
       end
+      p collected_measurements
       @json = collected_measurements.to_gmaps4rails rescue nil
     end
     flash.now[:notice] = "Device appears to be offline" if @json.nil?

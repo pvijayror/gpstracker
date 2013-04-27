@@ -19,5 +19,5 @@
         %td= link_to "Show in Map", user_device_location_path(:device_id => device.id), :class => "btn btn-small btn-success"
 
 = link_to "Register Device", register_device_user_devices_path, :class => "btn btn-small btn-info"
-= link_to "Show all in Map", location_user_devices_path, :class => "btn btn-small btn-success"
+= link_to "Show all in Map", location_user_devices_path(:all => true), :class => "btn btn-small btn-success"
 
