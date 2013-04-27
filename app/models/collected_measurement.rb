@@ -5,6 +5,6 @@ class CollectedMeasurement < ActiveRecord::Base
   has_many :variable_measures
 
   def gmaps4rails_address
-    "#{address}, #{city}"
+    ""
   end
 end

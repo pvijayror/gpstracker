@@ -1,0 +1,10 @@
+.login
+  %h2 Register Device
+  =simple_form_for([current_user, Device.new], :url => assign_device_user_devices_path, :method => :post, :html => {:class => 'form-horizontal' }) do |f|
+    =f.input :serial_number
+    %br
+    =f.input :token
+
+    .form-actions
+      =f.button :submit, :class => 'btn-primary', :label => "Register"
+      =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"

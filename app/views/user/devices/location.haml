@@ -1,4 +1,4 @@
 .container
   .row-fluid
-    = gmaps4rails(@json) if !@json.nil? 
+    = gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_adjust" => true, "auto_zoom" => false, "zoom" => 6}) if !@json.nil? 
     = link_to "Back", user_devices_path, :class => "btn btn-warning"

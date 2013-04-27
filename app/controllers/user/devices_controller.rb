@@ -14,15 +14,34 @@ class User::DevicesController < ApplicationController
     flash.now[:notice] = "Device appears to be offline" if @json.nil?
   end
 
+  def assign_device
+    device = Device.find_for_authentication(params[:device][:serial_number])
+    if device  
+      if device.valid_token?(params[:device][:token])
+        device.user = current_user
+        device.save
+        flash[:success] = "Device added"
+        redirect_to user_devices_path
+      else
+        flash[:error] = "Serial number or token is incorrect"
+        redirect_to register_device_user_devices_path
+      end
+    else
+      flash[:error] = "Device not found"
+      redirect_to register_device_user_devices_path
+    end
+  end
+
+  def register_device; end
 
   helper_method :devices, :device
 
   def device
-    @device||=Device.includes(:collected_measurements).find(params[:device_id])
+    @device||=current_user.devices.includes(:collected_measurements).find(params[:device_id])
   end
 
   def devices
-    @devices||=Device.includes(:collected_measurements).paginate(:page => params[:page])
+    @devices||=current_user.devices.includes(:collected_measurements).paginate(:page => params[:page])
   end
 
 end

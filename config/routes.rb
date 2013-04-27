@@ -58,7 +58,9 @@ Gpstracker::Application.routes.draw do
     resources :devices do
       get 'location'
       collection do
-        get 'location'
+        get  'location'
+        get  'register_device'
+        post 'assign_device'
       end
     end
     match '/dashboard' => 'home#dashboard'
