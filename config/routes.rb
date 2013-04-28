@@ -57,6 +57,8 @@ Gpstracker::Application.routes.draw do
   namespace :user do
     resources :devices do
       get 'location'
+      get  'start_tracking'
+      post 'create_tracking_route'
       collection do
         get  'location'
         get  'register_device'

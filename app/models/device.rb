@@ -3,6 +3,7 @@ class Device < ActiveRecord::Base
 
   belongs_to :user
   has_many   :collected_measurements
+  has_many   :traced_routes
 
   class << self
     def find_for_authentication serial_number

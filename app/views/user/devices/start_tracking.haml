@@ -1,0 +1,8 @@
+.login
+  %h2 Start a new Route
+  =simple_form_for([current_user, device.traced_routes.new], :url => user_device_create_tracking_route_path, :method => :post, :html => {:class => 'form-horizontal' }) do |f|
+    =f.input :description
+
+    .form-actions
+      =f.button :submit, :class => 'btn-primary'
+      =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"

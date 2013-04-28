@@ -59,7 +59,7 @@ class WebservicesLib
         if WsSecurityLib::Auth.check_api_key(api_key)
           case @req.path
             when "/api/push"
-              
+              resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], apikey, @req.params['variables'])
             else
               resp = WsJsonLib.format_messages(nil,"404",nil)
           end
@@ -116,5 +116,17 @@ class WebservicesLib
     end
     resp
   end
+
+  def insert_device_data(longitude, latitude, api_key, variables)
+    apikey = ApiKey.find_by_token api_key
+    collected_measurement = apikey.device.collected_measurements.new(:longitude => longitude, :latitude => latitude)
+    if collected_measurement.save
+      data = {:saved => true}
+    else
+      data = {:saved => false}
+    end
+    return data rescue ""
+  end
+
 
 end

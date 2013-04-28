@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427133602) do
+ActiveRecord::Schema.define(:version => 20130428011401) do
 
   create_table "administrators", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,9 +47,10 @@ ActiveRecord::Schema.define(:version => 20130427133602) do
     t.float    "longitude"
     t.float    "latitude"
     t.string   "token"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.boolean  "gmaps"
+    t.integer  "traced_route_id"
   end
 
   create_table "devices", :force => true do |t|
@@ -59,6 +60,16 @@ ActiveRecord::Schema.define(:version => 20130427133602) do
     t.boolean  "disabled",      :default => false
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "traced_routes", :force => true do |t|
+    t.integer  "device_id"
+    t.string   "description"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.string   "state"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

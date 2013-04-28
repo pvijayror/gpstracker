@@ -16,7 +16,7 @@
         %td= "Address geodecoded"
         %td
           = link_to "Show in Map", user_device_location_path(:device_id => device.id), :class => "btn btn-small btn-success"
-          = link_to "Start Tracking", "#", :class => "btn btn-small btn-info"
+          = link_to "Start Tracking", user_device_start_tracking_path(:device_id => device.id), :class => "btn btn-small btn-info"
           = link_to "Show Trace", "#", :class => "btn btn-small btn-info"
 
 = link_to "Register Device", register_device_user_devices_path, :class => "btn btn-small btn-info"

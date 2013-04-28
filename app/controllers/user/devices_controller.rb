@@ -35,7 +35,18 @@ class User::DevicesController < ApplicationController
     end
   end
 
-  def register_device; end
+  def create_tracking_route
+    traced_route = device.traced_routes.new(params[:traced_route])
+    traced_route.update_attributes(:start_datetime => Time.now)
+    if traced_route.save
+      flash[:success] = "Tracking route"
+      redirect_to user_devices_path
+    else
+      flash[:error] = "Tracking unable to start"
+      redirect_to user_devices_path
+    end
+  end
+  
 
   helper_method :devices, :device
 
