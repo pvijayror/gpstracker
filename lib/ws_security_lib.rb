@@ -44,11 +44,12 @@ module WsSecurityLib
       end
 
       def check_api_key(apikey)
-        false
+        result = false
         api_key = ApiKey.find_by_key(apikey)
         unless api_key.nil?
-          true if api_key_expirate?(api_key)
+          result = true if api_key_expirate?(api_key)
         end
+        result
       end
 
       def get_key(api_key)
