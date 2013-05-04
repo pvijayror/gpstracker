@@ -43,9 +43,9 @@ module WsSecurityLib
         api_key
       end
 
-      def check_api_key(api_key)
+      def check_api_key(apikey)
         false
-        api_key = ApiKey.find_by_key(api_key)
+        api_key = ApiKey.find_by_key(apikey)
         unless api_key.nil?
           true if api_key_expirate?(api_key)
         end
@@ -60,7 +60,6 @@ module WsSecurityLib
       def api_key_expirate?(api_key)
         ((api_key.expiry_date.to_time - Time.now) > 0) ? true : false
       end
-
     end
   end
 end
