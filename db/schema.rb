@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428011401) do
+ActiveRecord::Schema.define(:version => 20130504031406) do
 
   create_table "administrators", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130428011401) do
     t.integer  "device_id"
     t.string   "serial_number"
     t.string   "email"
-    t.date     "expiry_date"
+    t.datetime "expiry_date"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
