@@ -17,6 +17,11 @@ class WsJsonLib
             resp["method"] = "POST"
             resp["auth"] = {"serial_number" => data[:serial_number], "api_key" => data[:api_key]}
             resp.to_json
+          when "push"
+            resp = common_messages("ok","200")
+            resp["method"] = "POST"
+            resp["auth"] = {"received" => data[:saved]}
+            resp.to_json
         end
       else
         case code

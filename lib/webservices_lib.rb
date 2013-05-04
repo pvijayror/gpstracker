@@ -125,7 +125,7 @@ class WebservicesLib
     else
       data = {:saved => false}
     end
-    return data rescue ""
+    WsJsonLib.format_messages(data,"200","push")
   end
 
 
