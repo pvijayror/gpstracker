@@ -120,7 +120,7 @@ class WebservicesLib
   def insert_device_data(longitude, latitude, api_key, variables)
     apikey = ApiKey.find_by_key api_key
     collected_measurement = apikey.device.collected_measurements.new(:longitude => longitude, :latitude => latitude)
-    if collected_measurement.save
+    if collected_measurement.save(:validate => false)
       data = {:saved => true}
     else
       data = {:saved => false}
