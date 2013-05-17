@@ -48,6 +48,8 @@ Gpstracker::Application.routes.draw do
   #   end
 
   namespace :administrator do
+    resources :administrators
+    resources :users
     resources :devices
     match '/new_device_prot' => 'devices#new_prot' 
     match '/dashboard' => 'dashboard#index'
@@ -56,8 +58,10 @@ Gpstracker::Application.routes.draw do
 
   namespace :user do
     resources :devices do
-      get 'location'
+      get  'location'
       get  'start_tracking'
+      get 'finish_tracking_route'
+      get 'cancel_tracking_route'
       post 'create_tracking_route'
       collection do
         get  'location'
@@ -65,6 +69,7 @@ Gpstracker::Application.routes.draw do
         post 'assign_device'
       end
     end
+    
     match '/dashboard' => 'home#dashboard'
     match '/pricing' => 'home#pricing'
     match '/how_it_works' => 'home#how_it_works'

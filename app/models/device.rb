@@ -1,5 +1,5 @@
 class Device < ActiveRecord::Base
-  attr_accessible :serial_number, :token, :user_id, :disabled
+  attr_accessible :serial_number, :pin, :user_id, :disabled
 
   belongs_to :user
   has_many   :collected_measurements
@@ -12,13 +12,13 @@ class Device < ActiveRecord::Base
     end
   end
 
-  def valid_token? input_token
-    return false if token.blank?
-    compare_token(input_token)
+  def valid_pin? input_pin
+    return false if pin.blank?
+    compare_pin(input_pin)
   end
 
   private
-  def compare_token input_token
-    input_token == token ? true : false    
+  def compare_pin input_pin
+    input_pin == pin ? true : false    
   end
 end

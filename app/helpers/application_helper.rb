@@ -17,8 +17,8 @@ module ApplicationHelper
 
     # Actions
     back = :back#instance.class
-    destroy = args[:destroy] ? instance : nil
-    edit = args[:edit] ? [:edit, instance] : nil
+    destroy = args[:destroy] ? [controller_path.split('/').first.to_sym, instance] : nil
+    edit = args[:edit] ? [:edit, controller_path.split('/').first.to_sym, instance] : nil
     show = args[:show] ? instance : nil
     associations = Array.new
     if !args[:association].nil?
@@ -61,7 +61,7 @@ module ApplicationHelper
 
   # New button
   def new_button
-    new = [:new, current_controller.singularize]
+    new = [:new, controller_path.split('/').first.to_sym, current_controller.singularize]
     render "shared/buttons/new", :new => new
   end
 

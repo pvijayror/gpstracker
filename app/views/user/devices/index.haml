@@ -1,4 +1,4 @@
-%table.table.table-stripped.table-condensed
+%table.table.table-bordered.table-condensed
   %thead
     %tr
       %th Serial Number
@@ -16,8 +16,27 @@
         %td= "Address geodecoded"
         %td
           = link_to "Show in Map", user_device_location_path(:device_id => device.id), :class => "btn btn-small btn-success"
-          = link_to "Start Tracking", user_device_start_tracking_path(:device_id => device.id), :class => "btn btn-small btn-info"
-          = link_to "Show Trace", "#", :class => "btn btn-small btn-info"
+
+
+          .btn-group
+            %a.btn.btn-small.btn-info.dropdown-toggle(data-toggle="dropdown" href="#")
+              Tracker
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                - if device.traced_routes.blank? || (device.traced_routes.last.state == "finished")
+                  = link_to("Start Tracking", user_device_start_tracking_path(:device_id => device.id)) 
+                - else
+                  = link_to("Finish Tracking", user_device_finish_tracking_route_path(:device_id => device.id)) unless device.traced_routes.last.state != "pending"
+                  = link_to("Cancel Tracking", user_device_cancel_tracking_route_path(:device_id => device.id))
+              %li
+                = link_to "Show Trace", "#"
+
+
+
+
+          
+= will_paginate devices
 
 = link_to "Register Device", register_device_user_devices_path, :class => "btn btn-small btn-info"
 = link_to "Show all in Map", location_user_devices_path(:all => true), :class => "btn btn-small btn-success"

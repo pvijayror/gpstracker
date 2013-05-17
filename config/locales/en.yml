@@ -50,6 +50,14 @@ en:
       index: "Devices"
       show: "Device"
       new: "New Device"
+    administrators:
+      index: "Administrators"
+      show: "Administrator"
+      new: "New Administrator"
+    users:
+      index: "Users"
+      show: "User"
+      new: "New User"
 
   menu:
     home: "Home"
@@ -59,9 +67,16 @@ en:
   activerecord:
     models:
       device: "Device"
+      administrator: "Administrator"
     attributes:
       device:
         id: "ID"
         serial_number: "Serial Number"
         user_id: "User"
         token: "Token"
+      administrator:
+        id: "ID"
+        email: "Email"
+      user:
+        id: "ID"
+        email: "Email"

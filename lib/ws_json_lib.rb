@@ -10,17 +10,17 @@ class WsJsonLib
           when "auth"
             resp = common_messages("ok","200")
             resp["method"] = "POST"
-            resp["auth"] = {"login" => data[:login], "api_key" => data[:api_key]}
+            resp["data"] = {"login" => data[:login], "api_key" => data[:api_key]}
             resp.to_json          
           when "auth_device"
             resp = common_messages("ok","200")
             resp["method"] = "POST"
-            resp["auth"] = {"serial_number" => data[:serial_number], "api_key" => data[:api_key]}
+            resp["data"] = {"api_key" => data[:api_key]}
             resp.to_json
           when "push"
             resp = common_messages("ok","200")
             resp["method"] = "POST"
-            resp["auth"] = {"received" => data[:saved]}
+            resp["data"] = {"received" => data[:saved]}
             resp.to_json
         end
       else

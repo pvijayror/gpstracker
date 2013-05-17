@@ -1,4 +1,4 @@
-.navbar.navbar-top
+.navbar.navbar-fixed-top
   .navbar-inner
     .container
       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
@@ -18,11 +18,13 @@
           %li
             = link_to "FAQ", user_help_path
         %ul(class="nav pull-right")
-          - if current_user
+          - if current_user || current_administrator
             %li
-              = link_to t("common.my_account"), user_dashboard_path
+              = link_to t("common.my_account"), user_dashboard_path if current_user
+              = link_to t("common.my_account"), administrator_dashboard_path if current_administrator
             %li
-              = link_to t("common.sign_out"), destroy_user_session_path
+              = link_to t("common.sign_out"), destroy_user_session_path if current_user
+              = link_to t("common.sign_out"), destroy_administrator_session_path if current_administrator
           - else
             %li
               = link_to t("common.my_account"), new_user_session_path

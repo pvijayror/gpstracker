@@ -1,0 +1,4 @@
+%h2= t "activerecord.models.administrators"
+= index_grid administrators, [:id, :email], :show => true, :edit => false, :destroy => false, :new => false
+= link_to "Back", administrator_root_path, :class => "btn btn-warning"
+= link_to t("new_administrator"), new_administrator_administrator_path, :class => "btn btn-success"

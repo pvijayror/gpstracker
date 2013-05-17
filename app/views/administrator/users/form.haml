@@ -1,0 +1,10 @@
+=title user.new_record? ? c_t(:new) : "User"#"#{administrator.first_name} #{administrator.last_name}"
+
+=simple_form_for([:administrator, user], :html => {:class => 'form-horizontal' }) do |f|
+  =f.input :email
+  =f.input :password
+  =f.input :password_confirmation
+
+  .form-actions
+    =f.button :submit, :class => 'btn-primary'
+    =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"

@@ -5,10 +5,10 @@ module WsSecurityLib
       def initialize()
       end
 
-      def authenticate_device(serial_number, token)
+      def authenticate_device(serial_number, pin)
         device = Device.find_for_authentication(serial_number)
         unless device.blank?
-          if device.valid_token?(token)
+          if device.valid_pin?(pin)
             device
           else
             false
@@ -37,9 +37,9 @@ module WsSecurityLib
         api_key
       end
 
-      def get_device_api_key(device)
-        api_key = Base64.urlsafe_encode64("{:device=>#{device.id.to_s},:serial_number=>'#{device.serial_number}',:date=>'#{Time.now}'}" )
-        ApiKey.create(:device_id => device.id, :key => api_key, :serial_number => device.serial_number, :expiry_date => (Time.now + 2.hours))
+      def get_device_api_key(device, udi)
+        api_key = Base64.urlsafe_encode64("{:device=>#{device.id.to_s},:serial_number=>'#{device.serial_number}', :udi=>'#{udi}',:date=>'#{Time.now}'}" )
+        ApiKey.create(:device_id => device.id, :key => api_key, :serial_number => device.serial_number, :udi => udi, :expiry_date => nil)
         api_key
       end
 
@@ -59,7 +59,11 @@ module WsSecurityLib
       private
 
       def api_key_expirate?(api_key)
-        ((api_key.expiry_date.to_time - Time.now) > 0) ? true : false
+        unless api_key.expiry_date.nil?
+          ((api_key.expiry_date.to_time - Time.now) > 0) ? true : false
+        else
+          api_key.udi.nil? ? false : true
+        end
       end
     end
   end

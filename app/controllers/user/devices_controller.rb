@@ -47,6 +47,25 @@ class User::DevicesController < ApplicationController
     end
   end
   
+  def finish_tracking_route
+    if device.traced_routes.last.finish   
+      flash[:success] = "Tracking Route was finished"
+      redirect_to user_devices_path 
+    else
+      flash[:error] = "Tracking unable to finish"
+      redirect_to user_devices_path
+    end
+  end
+
+  def cancel_tracking_route
+    if device.traced_routes.last.cancel   
+      flash[:success] = "Tracking Route was canceled"
+      redirect_to user_devices_path 
+    else
+      flash[:error] = "Tracking unable to cancel"
+      redirect_to user_devices_path
+    end
+  end
 
   helper_method :devices, :device
 

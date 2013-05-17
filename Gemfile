@@ -22,6 +22,7 @@ group :production do
   gem 'pg'
 end
 
+gem "state_machine"
 gem 'gmaps4rails'
 gem "geocoder"
 gem 'bootstrap-will_paginate'
