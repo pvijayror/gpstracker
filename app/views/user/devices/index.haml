@@ -30,7 +30,7 @@
                   = link_to("Finish Tracking", user_device_finish_tracking_route_path(:device_id => device.id)) unless device.traced_routes.last.state != "pending"
                   = link_to("Cancel Tracking", user_device_cancel_tracking_route_path(:device_id => device.id))
               %li
-                = link_to "Show Trace", "#"
+                = link_to "Show Traced Routes", user_device_traced_routes_path(:device_id => device.id)
 
 
 

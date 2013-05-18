@@ -73,7 +73,9 @@ en:
         id: "ID"
         serial_number: "Serial Number"
         user_id: "User"
-        token: "Token"
+        pin: "Pin"
+        created_at: "Created At"
+        updated_at: "Updated At"
       administrator:
         id: "ID"
         email: "Email"

@@ -8,7 +8,7 @@ class Device < ActiveRecord::Base
 
   class << self
     def find_for_authentication serial_number
-      Device.find_by_serial_number(serial_number)
+      Device.find_by_disabled_and_serial_number(false, serial_number)
     end
   end
 

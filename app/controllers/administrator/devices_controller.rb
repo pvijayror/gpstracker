@@ -5,11 +5,11 @@ class Administrator::DevicesController < ApplicationController
   helper_method :devices, :device, :new_device
 
   def device
-    @device||=Device.find(params[:id])
+    @device||=Device.find_by_disabled_and_id(false, params[:id])
   end
 
   def devices
-    @devices||=Device.paginate(:page => params[:page])
+    @devices||=Device.where(:disabled => false).paginate(:page => params[:page])
   end
 
   def new
@@ -39,7 +39,8 @@ class Administrator::DevicesController < ApplicationController
   end
 
   def destroy
-    flash[:success] = t("alerts.destroyed_successfully") if device.destroy
+    device.disabled = true
+    flash[:success] = t("alerts.destroyed_successfully") if device.save
     redirect_to administrator_devices_path
   end
 

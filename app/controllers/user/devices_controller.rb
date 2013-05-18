@@ -20,13 +20,13 @@ class User::DevicesController < ApplicationController
   def assign_device
     device = Device.find_for_authentication(params[:device][:serial_number])
     if device  
-      if device.valid_token?(params[:device][:token])
+      if device.valid_pin?(params[:device][:pin])
         device.user = current_user
         device.save
         flash[:success] = "Device added"
         redirect_to user_devices_path
       else
-        flash[:error] = "Serial number or token is incorrect"
+        flash[:error] = "Serial number or pin is incorrect"
         redirect_to register_device_user_devices_path
       end
     else
@@ -70,11 +70,11 @@ class User::DevicesController < ApplicationController
   helper_method :devices, :device
 
   def device
-    @device||=current_user.devices.includes(:collected_measurements).find(params[:device_id])
+    @device||=current_user.devices.includes(:collected_measurements).find_by_disabled_and_id(false, params[:device_id])
   end
 
   def devices
-    @devices||=current_user.devices.includes(:collected_measurements).paginate(:page => params[:page])
+    @devices||=current_user.devices.includes(:collected_measurements).where(:disabled => false).paginate(:page => params[:page])
   end
 
 end

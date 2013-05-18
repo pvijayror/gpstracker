@@ -3,22 +3,55 @@
 
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     = devise_error_messages! 
+    - if resource_name == :user
+      %div
+        = f.label :email
+        %br
+        = f.email_field :email, :autofocus => true
+      %div
+        = f.label :first_name
+        %br
+        = f.text_field :first_name
+      %div
+        = f.label :last_name
+        %br
+        = f.text_field :last_name
+      %div
+        = f.label :company_name
+        %br
+        = f.text_field :company_name
+      %div
+        = f.label :telephone
+        %br
+        = f.text_field :telephone
+      %div
+        = f.label :cellphone 
+        %br
+        = f.text_field :cellphone
+      %div
+        = f.label :password
+        %br
+        = f.password_field :password
+      %div
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation
+    - else
+      %div
+        = f.label :email
+        %br
+        = f.email_field :email, :autofocus => true
+      %div
+        = f.label :password
+        %br
+        = f.password_field :password
 
+      %div
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation
     %div
-      = f.label :email
-      %br
-      = f.email_field :email, :autofocus => true
-    %div
-      = f.label :password
-      %br
-      = f.password_field :password
-
-    %div
-      = f.label :password_confirmation
-      %br
-      = f.password_field :password_confirmation
-    %div
-      = f.submit "Sign up" 
+      = f.submit "Sign up", :class => "btn btn-success" 
 
 
   = render "devise/shared/links" 

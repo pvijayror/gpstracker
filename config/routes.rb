@@ -58,6 +58,9 @@ Gpstracker::Application.routes.draw do
 
   namespace :user do
     resources :devices do
+      resources :traced_routes do
+        get 'show_trace'
+      end
       get  'location'
       get  'start_tracking'
       get 'finish_tracking_route'
