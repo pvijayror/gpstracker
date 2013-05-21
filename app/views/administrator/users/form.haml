@@ -1,10 +1,16 @@
-=title user.new_record? ? c_t(:new) : "User"#"#{administrator.first_name} #{administrator.last_name}"
+.login  
+  =title user.new_record? ? c_t(:new) : "User"#"#{administrator.first_name} #{administrator.last_name}"
 
-=simple_form_for([:administrator, user], :html => {:class => 'form-horizontal' }) do |f|
-  =f.input :email
-  =f.input :password
-  =f.input :password_confirmation
+  =simple_form_for([:administrator, user], :html => {:class => 'form-horizontal' }) do |f|
+    =f.input :email
+    =f.input :company_name
+    =f.input :first_name
+    =f.input :last_name
+    =f.input :telephone
+    =f.input :cellphone
+    =f.input :password
+    =f.input :password_confirmation
 
-  .form-actions
-    =f.button :submit, :class => 'btn-primary'
-    =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"
+    .form-actions
+      =f.button :submit, :class => 'btn-primary'
+      =link_to t("buttons.cancel"), :back, :class => "btn btn-danger"
