@@ -1,0 +1,51 @@
+.login
+  %h2 Checkout
+  %small Enter your card details
+
+  = form_tag  "/user/subscriptions", :id => "payment-form" do 
+    .div
+      %br
+      = label_tag :card_number, "Credit Card Number"
+      = text_field_tag :card_number, nil, name: nil
+      %br  
+    .div
+      .payment-errors
+        %noscript You need JavaScript enabled to use this form.
+    .div
+      = label_tag :card_code, "CVV"
+      = text_field_tag :card_code, nil, name: nil
+      %br
+    .div
+      = label_tag :card_month, "Card Expiration"
+      = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}
+      %br
+      = select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: "card_year"}
+      %br
+    = submit_tag "Pay", :class => "btn btn-success"
+
+
+
+= content_for :javascript do
+  :javascript
+    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
+
+    $("input[type=submit]").click(function(event){
+      event.preventDefault();
+      Stripe.createToken({
+        number: $('#card_number').val(),
+        cvc: $('#card_code').val(),
+        exp_month: $('#card_month').val(),
+        exp_year: $('#card_year').val()
+      }, stripeResponseHandler);
+    });
+
+    function stripeResponseHandler(status, response){
+      if(status==200){
+        var form$ = $("#payment-form");
+        var token = response.id;
+        form$.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+        form$.get(0).submit();
+      }
+      else
+        $(".payment-errors").text(response.error.message).prepend("</br>");
+    }

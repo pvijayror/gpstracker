@@ -57,6 +57,9 @@ Gpstracker::Application.routes.draw do
   end
 
   namespace :user do
+    resources :subscriptions do 
+      post 'payment'
+    end
     resources :devices do
       resources :traced_routes do
         get 'show_trace'

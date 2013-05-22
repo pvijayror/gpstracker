@@ -33,6 +33,7 @@ gem "haml-rails"
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'jquery-datatables-rails', git: 'https://github.com/rweng/jquery-datatables-rails.git'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

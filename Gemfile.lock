@@ -5,6 +5,14 @@ GIT
     jquery-datatables-rails (1.11.2)
       jquery-rails
 
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 2dbc700fc35c9f6191e274febcd283223fce7d9a
+  specs:
+    stripe (1.8.3)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -127,6 +135,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -184,6 +194,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   state_machine
+  stripe!
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
