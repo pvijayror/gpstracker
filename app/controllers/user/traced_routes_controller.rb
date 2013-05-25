@@ -1,7 +1,7 @@
 class User::TracedRoutesController < ApplicationController
 
   before_filter :authenticate_user!
-
+  before_filter :needs_subscription
   helper_method :traced_routes, :traced_route, :polylines_json
 
   def traced_route

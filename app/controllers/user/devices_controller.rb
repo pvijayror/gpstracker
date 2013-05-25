@@ -1,7 +1,8 @@
 class User::DevicesController < ApplicationController
 
   before_filter :authenticate_user!
-
+  before_filter :needs_subscription
+  
   def location
     if params[:all].blank?
       @json = Device.find_by_id(params[:device_id]).collected_measurements.last.to_gmaps4rails rescue nil
