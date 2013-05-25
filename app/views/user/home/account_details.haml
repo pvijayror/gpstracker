@@ -1,0 +1,28 @@
+.login
+  %h2= "#{current_user.first_name} #{current_user.last_name}"
+  %br
+  %ul(class="nav nav-tabs nav-stacked")
+    %li
+      %a
+        %h4= "Company:"  
+        %h5= "#{current_user.company_name}"
+    %li
+      %a
+        %h4= "Telephone:"  
+        %h5= "#{current_user.telephone}"
+    %li
+      %a
+        %h4= "Cellphone:"  
+        %h5= "#{current_user.cellphone}"  
+    %li
+      %a
+        %h4= "Last time I logged in:"  
+        %h5= "#{current_user.current_sign_in_at}" 
+    %li
+      %a
+        %h4= "Last sign in IP was:"  
+        %h5= "#{current_user.last_sign_in_ip}"  
+    
+  .text-left
+    = link_to "Back", user_dashboard_settings_path, :class => "btn btn-inverse"
+    = link_to "Edit", edit_user_registration_path, :class => "btn btn-warning"

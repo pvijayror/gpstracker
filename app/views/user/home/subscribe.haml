@@ -1,0 +1,14 @@
+- if current_user.subscriptions.blank?
+  .text-center
+    %h1 Welcome to PRAIG
+    %h3 To start please subscribe!
+
+- else
+  .text-center
+    %h1= "Hi! #{current_user.first_name} #{current_user.last_name}"
+    %h3= "Your annual subscription has ended #{current_user.subscriptions.last.end_date}"
+    %h5 Cancel your debt to continue using the service.
+
+
+.text-center
+  = link_to "1 year subscription $199.00", new_user_subscription_path, :class => "btn btn-success"

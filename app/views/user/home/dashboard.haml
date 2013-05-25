@@ -1,15 +1,9 @@
-%h2 Dashboard
-
-
 .login
-  %h3
-    = link_to "My Devices", user_devices_path
-  %br
-  %h3
-    = link_to "Reports", user_reports_path
-  %br
-  %h3
-    = link_to "Settings", "#"
-  %br   
+  %h2 Dashboard
+  %ul(class="nav nav-tabs nav-stacked")
+    %li= link_to "My Devices", user_devices_path
+    %li= link_to "My Devices in Map", location_user_devices_path(:all => true)
+    %li= link_to "Statistics Center", user_reports_path
+    %li= link_to "My Account Settings", user_dashboard_settings_path   
 
 

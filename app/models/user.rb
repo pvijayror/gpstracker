@@ -10,4 +10,13 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :devices
+  has_many :subscriptions
+
+  def has_active_subscription?
+    unless subscriptions.blank?
+      subscriptions.last.end_date > Time.now.to_date
+    else
+      false
+    end
+  end
 end

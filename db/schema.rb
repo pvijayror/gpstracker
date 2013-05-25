@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521233104) do
+ActiveRecord::Schema.define(:version => 20130524023057) do
 
   create_table "administrators", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20130521233104) do
     t.float    "amount"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "card_type"
+    t.string   "last4"
   end
 
   create_table "subscriptions", :force => true do |t|

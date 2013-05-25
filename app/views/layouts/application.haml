@@ -21,6 +21,8 @@
         .row
           .span12
             = render 'shared/alerts' unless flash.blank?
+            .text-left
+              = link_to "", user_dashboard_path, :class => "icon-home btn btn-large" unless url_for == user_dashboard_path
             %br
             = yield
 

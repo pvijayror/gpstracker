@@ -1,4 +1,4 @@
 %h2= t "activerecord.models.devices"
-= index_grid devices, [:id, :serial_number, :pin, :created_at, :updated_at], :show => false, :edit => true, :destroy => true, :new => false
+= index_grid devices, [:id, :serial_number, :pin, :created_at, :updated_at], :show => true, :edit => true, :destroy => true, :new => false
 = link_to "Back", administrator_root_path, :class => "btn btn-warning"
 = link_to t("new_device"), new_administrator_device_path, :class => "btn btn-success"

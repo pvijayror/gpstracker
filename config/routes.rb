@@ -51,7 +51,7 @@ Gpstracker::Application.routes.draw do
     resources :administrators
     resources :users
     resources :devices
-    match '/new_device_prot' => 'devices#new_prot' 
+
     match '/dashboard' => 'dashboard#index'
     root :to => 'dashboard#index'
   end
@@ -60,6 +60,7 @@ Gpstracker::Application.routes.draw do
     resources :subscriptions do 
       post 'payment'
     end
+    resources :payments
     resources :devices do
       resources :traced_routes do
         get 'show_trace'
@@ -76,6 +77,10 @@ Gpstracker::Application.routes.draw do
       end
     end
     
+    match '/dashboard/settings' => 'home#settings'
+    match '/dashboard/account_details' => 'home#account_details'
+    match '/dashboard/subscribe' => 'home#subscribe'
+
     match '/dashboard' => 'home#dashboard'
     match '/pricing' => 'home#pricing'
     match '/how_it_works' => 'home#how_it_works'

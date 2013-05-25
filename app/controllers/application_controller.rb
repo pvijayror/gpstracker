@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
     request.referrer
   end
 
+  def needs_subscription
+    if current_user.subscriptions.blank? || !current_user.subscriptions.last.active?
+      redirect_to user_dashboard_subscribe_path
+    end
+  end
+
   # Current action
   def current_action
     params[:action]

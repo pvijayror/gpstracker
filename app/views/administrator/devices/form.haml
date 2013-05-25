@@ -2,7 +2,7 @@
 
 .login
   %h2 New Device
-  =simple_form_for([current_administrator, device], :html => {:class => 'form-horizontal' }) do |f|
+  =simple_form_for([:administrator, device], :html => {:class => 'form-horizontal' }) do |f|
     =f.input :serial_number
     %br
     =f.input :pin

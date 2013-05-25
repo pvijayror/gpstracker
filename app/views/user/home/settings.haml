@@ -1,0 +1,14 @@
+.login
+  %h2 Settings
+
+  %ul(class="nav nav-tabs nav-stacked")
+    %li= link_to "Account Details", user_dashboard_account_details_path
+    %li= link_to "Payments Made", user_payments_path
+    %li= link_to "Edit my Account", edit_user_registration_path
+    %li= link_to "Change Password", edit_user_registration_path(:pass=>true)
+  %p Unhappy? 
+  = button_to "Cancel my account", registration_path(:user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "btn btn-danger"
+
+  %br
+  .text-left
+    = link_to "Back", user_dashboard_path, :class => "btn btn-inverse"
