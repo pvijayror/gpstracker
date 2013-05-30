@@ -6,8 +6,10 @@ class ApplicationController < ActionController::Base
   end
 
   def needs_subscription
-    if current_user.subscriptions.blank? || !current_user.subscriptions.last.active?
-      redirect_to user_dashboard_subscribe_path
+    if current_user
+      if current_user.subscriptions.blank? || !current_user.subscriptions.last.active?
+        redirect_to user_dashboard_subscribe_path
+      end
     end
   end
 

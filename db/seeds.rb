@@ -68,31 +68,31 @@
 #   collected_measurement.save(:validate => false)")
 
 traced_route = Device.find_by_serial_number("111111").traced_routes.new(:description => "Cargo de Uvas", :start_datetime => Time.now)
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "77.02", latitude: "12.04", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "77.02", latitude: "12.04", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "78.02", latitude: "12.11", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "78.02", latitude: "12.11", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "79.02", latitude: "13.04", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "79.02", latitude: "13.04", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "80.02", latitude: "13.34", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "80.02", latitude: "13.34", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "80.82", latitude: "13.44", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "80.82", latitude: "13.44", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "81.02", latitude: "14.04", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "81.02", latitude: "14.04", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "81.52", latitude: "14.14", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "81.52", latitude: "14.14", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "82.32", latitude: "14.24", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "82.32", latitude: "14.24", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: Device.find_by_serial_number("111111").id, longitude: "82.92", latitude: "14.94", traced_route_id: traced_route.id)
+collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "82.92", latitude: "14.94", traced_route_id: 1)
 collected_measurement.save(:validate => false) 
 
 
