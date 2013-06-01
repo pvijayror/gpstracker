@@ -21,6 +21,7 @@ end
 group :production do
   gem 'pg'
 end
+ 
 
 gem "state_machine"
 gem 'gmaps4rails'

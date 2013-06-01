@@ -74,17 +74,20 @@ class WebservicesLib
   #
   def get_response
     @res = Rack::Response.new
-    api_key = @req.params['api_key']
-    if WsSecurityLib::Auth.check_api_key(api_key)
+    #api_key = @req.params['api_key']
+    #if WsSecurityLib::Auth.check_api_key(api_key)
       case @req.path
         when "/qryr" 
           resp = qryr(api_key, @req.params['confirmation_nm'])
+        when "/api/push"
+              resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], @req.params['api_key'], @req.params['variables'])
         else
           resp = WsJsonLib.format_messages(nil,"404",nil)
+
       end
-    else
-      resp = WsJsonLib.format_messages(nil,"401",nil)
-    end
+    #else
+    #  resp = WsJsonLib.format_messages(nil,"401",nil)
+    #end
     @res.write(resp)
     @res.finish
   end
@@ -116,9 +119,13 @@ class WebservicesLib
   end
 
   def insert_device_data(longitude, latitude, api_key, variables)
+    puts 'RECIBIENDO INFORMACION'
     apikey = ApiKey.find_by_key api_key
-    collected_measurement = apikey.device.collected_measurements.new(:longitude => longitude, :latitude => latitude)
-    collected_measurement.traced_route_id = apikey.device.traced_routes.last.id unless apikey.device.traced_routes.blank? || apikey.device.traced_routes.last.state == "finished"
+    puts "."
+    puts ".."
+    puts "..."
+    collected_measurement = CollectedMeasurement.new(:longitude => longitude, :latitude => latitude, :device_id => variables)
+    collected_measurement.traced_route_id = TracedRoute.last.id unless TracedRoute.blank? || TracedRoute.last.state == "finished" rescue nil
    
     if collected_measurement.save(:validate => false)
       collected_measurement.traced_route.track unless collected_measurement.traced_route_id.nil?
@@ -126,6 +133,8 @@ class WebservicesLib
     else
       data = {:saved => false}
     end
+    puts 'VALIDANDO TOKENS'
+    puts 'TOKEN VALIDO, REGISTRANDO INFORMACION ...'
     WsJsonLib.format_messages(data,"200","push")
   end
 
