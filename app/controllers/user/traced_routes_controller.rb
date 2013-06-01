@@ -2,7 +2,7 @@ class User::TracedRoutesController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :needs_subscription
-  helper_method :traced_routes, :traced_route, :polylines_json
+  helper_method :traced_routes, :traced_route, :polylines_json, :first_and_last_markers
 
   def traced_route
     @traced_route||=traced_routes.find(params[:traced_route_id])
@@ -16,12 +16,22 @@ class User::TracedRoutesController < ApplicationController
     polilynes = Array.new
     coordinates = traced_route.collected_measurements.select("longitude, latitude")
     coordinates.each do |x|
-      polilynes << {"lng"=>x.longitude, "lat"=>x.latitude}
+      if polilynes.count < 1
+        polilynes << {"lng"=>x.longitude, "lat"=>x.latitude}
+      else
+        polilynes << {"lng"=>x.longitude, "lat"=>x.latitude}
+      end
     end 
     if coordinates.blank? 
       flash.now[:notice] = "There isn't received data for this route"
     end
     @polylines_json = [polilynes].to_json
+  end
+
+  def first_and_last_markers
+    coordinates = traced_route.collected_measurements.select("longitude, latitude")
+    data = [{"lng" => coordinates.first.longitude, "lat" => coordinates.first.latitude, "picture" => "http://maps.google.com/mapfiles/marker_greenA.png"},  {"lng" => coordinates.last.longitude, "lat" => coordinates.last.latitude, "picture" => "http://maps.google.com/mapfiles/marker_purpleB.png"}]
+    p data.to_json
   end
 
   def device

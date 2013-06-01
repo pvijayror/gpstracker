@@ -12,6 +12,10 @@ class User::HomeController < ApplicationController
     logger.info "No subscriptions found"
   end
 
+  def page_404
+    redirect_to root_path
+  end
+
 
 
 end

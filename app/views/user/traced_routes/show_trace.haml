@@ -2,5 +2,5 @@
   .row-fluid
     -# zoom = (@json.length > 100 ? true : false rescue false)
     = #gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_adjust" => true, "auto_zoom" => zoom, "zoom" => 6}) if !@json.nil? 
-    = gmaps({"polylines"    => { "data" => polylines_json }})
+    = gmaps("markers" => {"data" => first_and_last_markers}, "polylines"=>{ "data" => polylines_json})
     = link_to "Back", user_device_traced_routes_path, :class => "btn btn-warning"
