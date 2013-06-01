@@ -26,12 +26,16 @@ class User::TracedRoutesController < ApplicationController
       flash.now[:notice] = "There isn't received data for this route"
     end
     @polylines_json = [polilynes].to_json
+  rescue
+    nil
   end
 
   def first_and_last_markers
     coordinates = traced_route.collected_measurements.select("longitude, latitude")
     data = [{"lng" => coordinates.first.longitude, "lat" => coordinates.first.latitude, "picture" => "http://maps.google.com/mapfiles/marker_greenA.png"},  {"lng" => coordinates.last.longitude, "lat" => coordinates.last.latitude, "picture" => "http://maps.google.com/mapfiles/marker_purpleB.png"}]
     p data.to_json
+  rescue 
+    nil
   end
 
   def device
