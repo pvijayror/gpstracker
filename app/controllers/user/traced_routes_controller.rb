@@ -32,7 +32,7 @@ class User::TracedRoutesController < ApplicationController
 
   def first_and_last_markers
     coordinates = traced_route.collected_measurements.select("longitude, latitude")
-    data = [{"lng" => coordinates.first.longitude, "lat" => coordinates.first.latitude, "picture" => "http://maps.google.com/mapfiles/marker_greenA.png"},  {"lng" => coordinates.last.longitude, "lat" => coordinates.last.latitude, "picture" => "http://maps.google.com/mapfiles/marker_purpleB.png"}]
+    data = [{"lng" => coordinates.first.longitude, "lat" => coordinates.first.latitude, "picture" => "https://maps.google.com/mapfiles/marker_greenA.png"},  {"lng" => coordinates.last.longitude, "lat" => coordinates.last.latitude, "picture" => "https://maps.google.com/mapfiles/marker_purpleB.png"}]
     p data.to_json
   rescue 
     nil
