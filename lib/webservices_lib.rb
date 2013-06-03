@@ -77,8 +77,6 @@ class WebservicesLib
     #api_key = @req.params['api_key']
     #if WsSecurityLib::Auth.check_api_key(api_key)
       case @req.path
-        when "/qryr" 
-          resp = qryr(api_key, @req.params['confirmation_nm'])
         when "/api/push"
               resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], @req.params['api_key'], @req.params['variables'])
         else
@@ -124,8 +122,10 @@ class WebservicesLib
     puts "."
     puts ".."
     puts "..."
-    collected_measurement = CollectedMeasurement.new(:longitude => longitude, :latitude => latitude, :device_id => variables)
-    collected_measurement.traced_route_id = TracedRoute.last.id unless TracedRoute.blank? || TracedRoute.last.state == "finished" rescue nil
+
+    device = Device.find_by_id variables
+    collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)   
+    collected_measurement.traced_route_id = device.traced_routes.last.id unless device.traced_routes.blank? || device.traced_routes.last.state == "finished"
    
     if collected_measurement.save(:validate => false)
       collected_measurement.traced_route.track unless collected_measurement.traced_route_id.nil?
