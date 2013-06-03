@@ -82,3 +82,28 @@ en:
       user:
         id: "ID"
         email: "Email"
+
+  frontend:
+    home:
+      subtitle: "Tracking and Analysis of Geostatistic Information"
+      what_is: "What is PRAIG"
+      what_is_content: "PRAIG Tracking System gives you the ability to track as many devices as you want using GPS devices, you can also add aditional sensorial devices to retrieve environment data."
+      how_does_it_works: "How does it works?"
+      how_does_it_works_content_1: "First, register you personal information."
+      how_does_it_works_content_2: "Then, subscribe to the plan you find a best fit."
+      how_does_it_works_content_3: "Now you are ready, just add your devices to start tracking them."
+      gps_tracking: "GPS Tracking"
+      gps_tracking_content: "Spot and track the paths of your devices using GPS geolocalization. If your device is an Android, download the app from Google Play to start tracking it."
+      data_analysis: "Data Analysis"
+      data_analysis_content: "Watch the variables sent from your devices to see all the differentials and changes you might need to analyze."
+      graphics_generator: "Graphics Generator"
+      graphics_generator_content: "Generate graphs from the variables sent from your device. See pie charts, bar charts and more."
+
+
+
+
+
+
+
+
+
