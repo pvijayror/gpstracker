@@ -18,11 +18,12 @@ group :development do
   gem 'meta_request'
 end
 
+ 
 group :production do
   gem 'pg'
 end
  
-
+ 
 gem "state_machine"
 gem 'gmaps4rails'
 gem "geocoder"

@@ -41,6 +41,8 @@ monotone_graph_chart.png: monotone_graph_chart-ef782661ddd7b3b03b703eb8e279ca08.
 monotone_graph_chart/index.png: monotone_graph_chart-ef782661ddd7b3b03b703eb8e279ca08.png
 monotone_location_pin_marker.png: monotone_location_pin_marker-8e60c60f341a5829b380f2f06b7e8942.png
 monotone_location_pin_marker/index.png: monotone_location_pin_marker-8e60c60f341a5829b380f2f06b7e8942.png
+praig_headquarters.png: praig_headquarters-82f1ba1929974053a546c26221fc8d6f.png
+praig_headquarters/index.png: praig_headquarters-82f1ba1929974053a546c26221fc8d6f.png
 radar-screen-icon.jpg: radar-screen-icon-59a2bffcd13bb234da5e53724a11b0c9.jpg
 radar-screen-icon/index.jpg: radar-screen-icon-59a2bffcd13bb234da5e53724a11b0c9.jpg
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
@@ -61,8 +63,8 @@ up.jpg: up-2b4e40d351638776d06b94d64f128eff.jpg
 up/index.jpg: up-2b4e40d351638776d06b94d64f128eff.jpg
 world.jpg: world-20f2d6841ef5977e022cb6b3eed4f9b9.jpg
 world/index.jpg: world-20f2d6841ef5977e022cb6b3eed4f9b9.jpg
-application.js: application-1515fd7926ebf23c7cbc63cb49167958.js
-application/index.js: application-1515fd7926ebf23c7cbc63cb49167958.js
+application.js: application-5fa795fc1897cf34a53382bc72df6db2.js
+application/index.js: application-5fa795fc1897cf34a53382bc72df6db2.js
 README: README
 demo/demo.html: demo/demo-f5ce8032f4cdfeece115a8af6258c74d.html
 demo/demo/index.html: demo/demo-f5ce8032f4cdfeece115a8af6258c74d.html
@@ -78,8 +80,8 @@ demo/images/walle.jpg: demo/images/walle-b43d33923ce4209ee4a36df7e186af74.jpg
 demo/images/walle/index.jpg: demo/images/walle-b43d33923ce4209ee4a36df7e186af74.jpg
 license.txt: license-3884ce7f3d8d201b98feb2ceb4f333ea.txt
 license/index.txt: license-3884ce7f3d8d201b98feb2ceb4f333ea.txt
-application.css: application-e2bf0e0eefec660bd84149a5ea5c934f.css
-application/index.css: application-e2bf0e0eefec660bd84149a5ea5c934f.css
+application.css: application-29b055992e0d8ad8f7cda9169320250c.css
+application/index.css: application-29b055992e0d8ad8f7cda9169320250c.css
 themes/bar/arrows.png: themes/bar/arrows-5dcac09039d38d4a70442da070bc0960.png
 themes/bar/arrows/index.png: themes/bar/arrows-5dcac09039d38d4a70442da070bc0960.png
 themes/bar/bullets.png: themes/bar/bullets-a5fbbe7fb25eab4b36a278b05ee0420a.png

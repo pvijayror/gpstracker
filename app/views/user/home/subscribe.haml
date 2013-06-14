@@ -11,4 +11,7 @@
 
 
 .text-center
-  = link_to "1 year subscription $199.00", new_user_subscription_path, :class => "btn btn-success"
+  - subscription_types.each do |st|
+    = link_to "#{st.months} #{t("frontend.subscribe.months")} $#{st.price}", new_user_subscription_path(:subscription_type => st.id), :class => "btn btn-success"
+    %br
+    %br

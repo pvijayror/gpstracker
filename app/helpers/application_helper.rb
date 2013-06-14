@@ -8,6 +8,10 @@ module ApplicationHelper
     end
   end
 
+  def subscription_types
+    SubscriptionType.subscription_types
+  end
+
   # Actions
   # * +instance+: Current instance
   # * +args+: Arguments

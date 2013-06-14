@@ -1,111 +1,119 @@
 Gpstracker::Application.routes.draw do
-  devise_for :users do 
-    get '/users/sign_out' => 'devise/sessions#destroy' 
-  end
-
-  devise_for :administrators, :controllers => {:sessions => "administrator/sessions"} do 
-    get '/administrators/sign_out' => 'administrator/sessions#destroy' 
-    get '/admin' => 'administrator/sessions#new' 
-  end
-
-  
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  #match '/' => 'user/home#index'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  namespace :administrator do
-    resources :administrators
-    resources :users
-    resources :devices
-
-    match '/dashboard' => 'dashboard#index'
-    root :to => 'dashboard#index'
-  end
-
-  namespace :user do
-    resources :subscriptions do 
-      post 'payment'
+    devise_for :users do 
+      get '/users/sign_out' => 'devise/sessions#destroy' 
     end
-    resources :payments
-    resources :devices do
-      resources :traced_routes do
-        get 'show_trace'
-      end
-      get  'location'
-      get  'start_tracking'
-      get 'finish_tracking_route'
-      get 'cancel_tracking_route'
-      post 'create_tracking_route'
-      collection do
-        get  'location'
-        get  'register_device'
-        post 'assign_device'
-      end
+
+    devise_for :administrators, :controllers => {:sessions => "administrator/sessions"} do 
+      get '/administrators/sign_out' => 'administrator/sessions#destroy' 
+      get '/admin' => 'administrator/sessions#new' 
     end
+
     
-    match '/dashboard/settings' => 'home#settings'
-    match '/dashboard/account_details' => 'home#account_details'
-    match '/dashboard/subscribe' => 'home#subscribe'
+    # Sample of regular route:
+    #   match 'products/:id' => 'catalog#view'
+    #match '/' => 'user/home#index'
+    # Keep in mind you can assign values other than :controller and :action
 
-    match '/dashboard' => 'home#dashboard'
-    match '/pricing' => 'home#pricing'
-    match '/how_it_works' => 'home#how_it_works'
-    match '/contact_us' => 'home#contact_us'
-    match '/help' => 'home#help'
+    # Sample of named route:
+    #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+    # This route can be invoked with purchase_url(:id => product.id)
 
-    match '/reports' => 'home#reports'
-    match '/map_devices' => 'home#map_devices'
-    match '/lineal_regresion' => 'home#lineal_regresion'
-    match '/dependency_analysis' => 'home#dependency_analysis'
-    match '/stationality_analysis' => 'home#stationality_analysis'
-    match '/devices' => 'home#devices'
-    match '/generate_graph' => 'home#generate_graph'
-    match '/variable_history' => 'home#variable_history'
-    root :to => 'home#dashboard'
+    # Sample resource route (maps HTTP verbs to controller actions automatically):
+    #   resources :products
+
+    # Sample resource route with options:
+    #   resources :products do
+    #     member do
+    #       get 'short'
+    #       post 'toggle'
+    #     end
+    #
+    #     collection do
+    #       get 'sold'
+    #     end
+    #   end
+
+    # Sample resource route with sub-resources:
+    #   resources :products do
+    #     resources :comments, :sales
+    #     resource :seller
+    #   end
+
+    # Sample resource route with more complex sub-resources
+    #   resources :products do
+    #     resources :comments
+    #     resources :sales do
+    #       get 'recent', :on => :collection
+    #     end
+    #   end
+
+    namespace :administrator do
+      resources :administrators
+      resources :users
+      resources :devices
+      resources :subscription_types
+
+      match '/dashboard' => 'dashboard#index'
+      root :to => 'dashboard#index'
+    end
+
+    namespace :user do
+      resources :subscriptions do 
+        post 'payment'
+      end
+      resources :payments
+      resources :devices do
+        resources :traced_routes do
+          get 'show_trace'
+        end
+        resources :collected_measurements
+        get 'location'
+        get 'start_tracking'
+        get 'finish_tracking_route'
+        get 'cancel_tracking_route'
+        post 'create_tracking_route'
+        collection do
+          get 'measurements'
+          get  'location'
+          get  'register_device'
+          post 'assign_device'
+        end
+      end
+      
+  scope "(:locale)", :locale => /en|es/ do
+      match '/dashboard/settings' => 'home#settings'
+      match '/dashboard/account_details' => 'home#account_details'
+      match '/dashboard/subscribe' => 'home#subscribe'
+
+      match '/dashboard' => 'home#dashboard'
+      match '/pricing' => 'home#pricing'
+      match '/how_it_works' => 'home#how_it_works'
+      match '/contact_us' => 'home#contact_us'
+      match '/help' => 'home#help'
+
+      match '/reports' => 'home#reports'
+      match '/map_devices' => 'home#map_devices'
+      match '/lineal_regresion' => 'home#lineal_regresion'
+      match '/dependency_analysis' => 'home#dependency_analysis'
+      match '/stationality_analysis' => 'home#stationality_analysis'
+      match '/devices' => 'home#devices'
+      match '/generate_graph' => 'home#generate_graph'
+      match '/variable_history' => 'home#variable_history'
+      root :to => 'home#dashboard'
+    end
+
+
+    # You can have the root of your site routed with "root"
+    # just remember to delete public/index.html.
+    # root :to => 'welcome#index'
+    root :to => 'user/home#index'
+    # See how all your routes lay out with "rake routes"
+
+    # This is a legacy wild controller route that's not recommended for RESTful applications.
+    # Note: This route will make all actions in every controller accessible via GET requests.
+    # match ':controller(/:action(/:id))(.:format)'
+    get "*path" => 'user/home#page_404'
+
   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
   root :to => 'user/home#index'
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
-  get "*path" => 'user/home#page_404'
 end

@@ -68,6 +68,10 @@ class User::DevicesController < ApplicationController
     end
   end
 
+  def measurements
+    
+  end
+
   helper_method :devices, :device
 
   def device

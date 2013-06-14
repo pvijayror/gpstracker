@@ -4,9 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
  
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = params[:lang] || I18n.default_locale
   end  
-
 
   def after_sign_out_path_for(resource_or_scope)
     request.referrer

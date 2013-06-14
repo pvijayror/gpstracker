@@ -1,0 +1,2 @@
+module Administrator::SubscriptionTypesHelper
+end

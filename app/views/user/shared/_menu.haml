@@ -8,19 +8,18 @@
       .container.nav-collapse
         %ul.nav
           %li
-            = link_to t("menu.home"), root_path
+            = link_to t("menu.home"), root_path(:locale => I18n.locale)
           %li
-            = link_to "Pricing", user_pricing_path
+            = link_to "Pricing", user_pricing_path(:locale => I18n.locale)
           %li
-            = link_to "How it Works", user_how_it_works_path
+            = link_to "How it Works", user_how_it_works_path(:locale => I18n.locale)
           %li
-            = link_to "Contact Us", user_contact_us_path
-          %li
-            = link_to "FAQ", user_help_path
+            = link_to "Contact Us", user_contact_us_path(:locale => I18n.locale)
+
         %ul(class="nav pull-right")
           - if current_user || current_administrator
             %li
-              = link_to t("common.my_account"), user_dashboard_path if current_user
+              = link_to "#{current_user.first_name} #{current_user.last_name}", user_dashboard_path if current_user
               = link_to t("common.my_account"), administrator_dashboard_path if current_administrator
             %li
               = link_to t("common.sign_out"), destroy_user_session_path if current_user

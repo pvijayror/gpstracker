@@ -3,12 +3,14 @@
 %table.table.table-bordered.table-condensed
   %tbody
     - payments.each do |p|
-      %tr
-        %td= p.created_at.to_date 
-        %td Payment. Thank You!
-        %td= p.card_type
-        %td= "XXXX-XXXX-XXXX-"+ p.last4.to_s
-        %td= "USD " + sprintf('%.2f', p.amount).to_s
+      - unless p.nil?
+        %tr
+          %td="Paid: #{p.created_at.to_date}" 
+          %td="Ends: #{p.created_at.to_date + 1.year}" 
+          %td Payment. Thank You!
+          %td= p.card_type
+          %td= "XXXX-XXXX-XXXX-"+ p.last4.to_s
+          %td= "USD " + sprintf('%.2f', p.amount).to_s
 
 .text-left
   = link_to "Back", user_dashboard_settings_path, :class => "btn btn-inverse"

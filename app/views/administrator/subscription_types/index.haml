@@ -1,0 +1,4 @@
+%h2= t "activerecord.models.subscription_types"
+= index_grid subscription_types, [:id, :price, :months, :created_at, :updated_at], :show => true, :edit => true, :destroy => true, :new => false
+= link_to "Back", administrator_root_path, :class => "btn btn-warning"
+= link_to t("new_subscription_type"), new_administrator_subscription_type_path, :class => "btn btn-success"

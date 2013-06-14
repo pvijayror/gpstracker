@@ -1,7 +1,39 @@
-.container
-     
-  .row-fluid
-    .span12
-      %center
-        %h1
-          Contact Us
+
+.row-fluid
+  .span12
+    %center
+      %h1
+        Contact Us
+      %br
+.row-fluid
+  .span1
+  .span10
+    #wrapper
+      %div(class="slider-wrapper theme-default")
+        %div(id="slider" class="nivoSlider")
+          = image_tag "praig_headquarters.png"
+  .span1
+.br
+.row-fluid
+  .span3
+  .span6.login.text-left
+    %h1
+      = t("frontend.contact_us.contact_us_by")
+    .contact-details
+      %h5
+        = t("frontend.contact_us.phone")
+      %p
+        +51-1-888-4545
+      %h5
+        e-Mail
+      %p
+        praig.support@gmail.com
+      %h5
+        = t("frontend.contact_us.address")
+      %p
+        1 Infinite Loop 3454, San Isidro
+      %p
+        Lima, LI27 95014
+      %p 
+        Peru
+  .span3

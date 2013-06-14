@@ -12,9 +12,12 @@
       .payment-errors
         %noscript You need JavaScript enabled to use this form.
     .div
-      = label_tag :card_code, "CVV"
-      = text_field_tag :card_code, nil, name: nil
-      %br
+      = label_tag :card_code, "3 Digit Verification Code "
+      %small
+        (CVV2)
+      = text_field_tag :card_code, nil, name: nil, :class => "input-mini"
+      =image_tag "cvv.jpg", :class => "img-polaroid", :style => "width: 100px;"
+    %br
     .div
       = label_tag :card_month, "Card Expiration"
       = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}

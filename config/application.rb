@@ -62,6 +62,10 @@ module Gpstracker
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.i18n.fallbacks = true
+
+    config.i18n.default_locale = "en"
+
     config.generators do |g|
         g.template_engine :haml
     end

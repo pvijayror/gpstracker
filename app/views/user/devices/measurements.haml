@@ -1,0 +1,13 @@
+%h2.text-center Collected Data
+
+%table.table.table-bordered.table-condensed
+  %thead
+    %tr
+      %th Device
+      %th Collected Variables
+  %tbody
+    - devices.each do |x|
+      %tr
+        %td= x.serial_number
+        %td= link_to "Select", user_device_collected_measurements_path(:device_id => x.id)
+

@@ -3,6 +3,7 @@
   %h2 Dashboard
   %ul(class="nav nav-tabs nav-stacked")
     %li= link_to "Administrators", administrator_administrators_path if current_administrator.is_super?
+    %li= link_to "Subscription Types", administrator_subscription_types_path
     %li= link_to "Users", administrator_users_path
     %li= link_to "Devices", administrator_devices_path
     

@@ -3,6 +3,7 @@ en:
   project:
     title: "PRAIG"
     url: "https://praig.com"
+    copyright: "All Rights Reserved"
 
   actions:
     actions: "Actions"
@@ -58,6 +59,10 @@ en:
       index: "Users"
       show: "User"
       new: "New User"
+    subscription_types:
+      index: "Subscription Types"
+      show: "Subscription Type"
+      new: "New Subscription"
 
   menu:
     home: "Home"
@@ -68,6 +73,7 @@ en:
     models:
       device: "Device"
       administrator: "Administrator"
+      subscription_type: "Subscription Type"
     attributes:
       device:
         id: "ID"
@@ -79,9 +85,21 @@ en:
       administrator:
         id: "ID"
         email: "Email"
+        created_at: "Created At"
+        updated_at: "Updated At"
       user:
         id: "ID"
         email: "Email"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      subscription_type:
+        id: "ID"
+        price: "Price"
+        months: "Months"
+        description: "Description"
+        translation: "Translation"
+        created_at: "Created At"
+        updated_at: "Updated At"
 
   frontend:
     home:
@@ -98,9 +116,16 @@ en:
       data_analysis_content: "Watch the variables sent from your devices to see all the differentials and changes you might need to analyze."
       graphics_generator: "Graphics Generator"
       graphics_generator_content: "Generate graphs from the variables sent from your device. See pie charts, bar charts and more."
-
-
-
+    contact_us:
+      contact_us_by: "Contact us by:"
+      phone: "Phone"
+      address: "Address"
+    how_it_works:
+      step1: "First, register. Just fill up the sign up form with your personal information and you will receive an email with a link to validate your account. Once validated you are ready to subscribe!"
+      step2: "You will now be prompt to subscribe in order start using the platform. Just choose the subscription option you find best for your budget."
+      step3: "Now you are ready to go! Just register the devices you've purchased to start tracking them."
+    subscribe:
+      months: "months subscription for just"
 
 
 

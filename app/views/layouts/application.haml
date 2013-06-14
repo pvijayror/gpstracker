@@ -22,17 +22,25 @@
           .span12
             = render 'shared/alerts' unless flash.blank?
             %br
+            #languages.text-right
+              = link_to 'English', '?lang=en', :class => "#{"active" if I18n.locale == :en}"
+              |
+              = link_to 'Español', '?lang=es', :class => "#{"active" if I18n.locale == :es}"
+              |
+              = link_to '中國的', '?lang=zh', :class => "#{"active" if I18n.locale == :zh}"
+            %br
             = yield
             %br
             .text-right
-              = link_to "", user_dashboard_path, :class => "icon-home btn btn-large" unless url_for == user_dashboard_path || current_user.nil?
-
+              = #link_to "", user_dashboard_path, :class => "icon-home btn btn-large" unless url_for == user_dashboard_path || current_user.nil?
+  
     = render "user/shared/javascript"
-
+  %footer
     .footer
       = yield :scripts
       #copyright
-        © PRAIG 2013 - Todos los derechos reservados 
+        = "© PRAIG 2013 -  #{t("project.copyright")}"
+
 
 
 

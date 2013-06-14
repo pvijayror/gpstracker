@@ -4,7 +4,7 @@ class User::PaymentsController < ApplicationController
   helper_method :payments, :payment
 
   def payment
-    @payment||=Payment.find_by_id(params[:payment_id])
+    @payment=Payment.find_by_id(params[:payment_id])
   end
 
   def payments
@@ -12,6 +12,6 @@ class User::PaymentsController < ApplicationController
     current_user.subscriptions.each do |s|
       payments << s.payment
     end
-    @payments||=payments
+    @payments=payments
   end
 end
