@@ -78,7 +78,7 @@ class WebservicesLib
     #if WsSecurityLib::Auth.check_api_key(api_key)
       case @req.path
         when "/api/push"
-              resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], @req.params['api_key'], @req.params['variables'])
+              resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], @req.params['api_key'], @req.params['variables'], @req.params['value']))
         else
           resp = WsJsonLib.format_messages(nil,"404",nil)
 
@@ -124,13 +124,14 @@ class WebservicesLib
     puts "..."
 
     device = Device.find_by_id variables
-    collected_measurement = CollectedMeasurement.new(:longitude => longitude, :latitude => latitude)    
+    collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)    
+    collected_measurement.traced_route_id = device.traced_routes.last.id unless device.traced_routes.blank? || device.traced_routes.last.state == "finished"
     variable_meature = VariableMeature.new
     variable_meature.collected_measurement_id = collected_measurement.id
     variable_meature.value = value
     variable_meature.save
     #collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)   
-    #collected_measurement.traced_route_id = device.traced_routes.last.id unless device.traced_routes.blank? || device.traced_routes.last.state == "finished"
+    
    
  
     if collected_measurement.save(:validate => false)
