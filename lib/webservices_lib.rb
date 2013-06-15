@@ -133,8 +133,7 @@ class WebservicesLib
  
     if collected_measurement.save(:validate => false)
       collected_measurement.traced_route.track unless collected_measurement.traced_route_id.nil?
-      variable_measure.collected_measurement_id = collected_measurement.id
-      variable_measure.value = value
+      variable_measure.update_attributes(:collected_measurement_id => collected_measurement.id, :value => value)
       variable_measure.save
       data = {:saved => true}
     else
