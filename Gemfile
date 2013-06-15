@@ -19,9 +19,7 @@ group :development do
 end
 
  
-group :production do
-  gem 'pg'
-end
+ 
  
  
 gem "state_machine"

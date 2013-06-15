@@ -116,7 +116,7 @@ class WebservicesLib
     resp
   end
 
-  def insert_device_data(longitude, latitude, api_key, variables)
+  def insert_device_data(longitude, latitude, api_key, variables, value)
     puts 'RECIBIENDO INFORMACION'
     apikey = ApiKey.find_by_key api_key
     puts "."
@@ -124,9 +124,15 @@ class WebservicesLib
     puts "..."
 
     device = Device.find_by_id variables
-    collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)   
-    collected_measurement.traced_route_id = device.traced_routes.last.id unless device.traced_routes.blank? || device.traced_routes.last.state == "finished"
+    collected_measurement = CollectedMeasurement.new(:longitude => longitude, :latitude => latitude)    
+    variable_meature = VariableMeature.new
+    variable_meature.collected_measurement_id = collected_measurement.id
+    variable_meature.value = value
+    variable_meature.save
+    #collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)   
+    #collected_measurement.traced_route_id = device.traced_routes.last.id unless device.traced_routes.blank? || device.traced_routes.last.state == "finished"
    
+ 
     if collected_measurement.save(:validate => false)
       collected_measurement.traced_route.track unless collected_measurement.traced_route_id.nil?
       data = {:saved => true}
