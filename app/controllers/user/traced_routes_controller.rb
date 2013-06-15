@@ -38,6 +38,26 @@ class User::TracedRoutesController < ApplicationController
     nil
   end
 
+  def heat_map
+    mainlyne = Array.new
+    polilynes = Array.new
+    coordinates = traced_route.collected_measurements
+    coordinates.each do |x|
+      coordinates.variable_measures.first
+      if polilynes.count < 1
+        polilynes << {"lng"=>x.longitude, "lat"=>x.latitude}
+      else
+        polilynes << {"lng"=>x.longitude, "lat"=>x.latitude}
+      end
+    end 
+    if coordinates.blank? 
+      flash.now[:notice] = "There isn't received data for this route"
+    end
+    @polylines_json = [polilynes].to_json
+  rescue
+    nil
+  end
+
   def device
     @device||=current_user.devices.includes(:collected_measurements).find(params[:device_id])
   end

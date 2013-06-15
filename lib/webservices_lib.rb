@@ -126,10 +126,10 @@ class WebservicesLib
     device = Device.find_by_id variables
     collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)    
     collected_measurement.traced_route_id = device.traced_routes.last.id unless device.traced_routes.blank? || device.traced_routes.last.state == "finished"
-    variable_meature = VariableMeature.new
-    variable_meature.collected_measurement_id = collected_measurement.id
-    variable_meature.value = value
-    variable_meature.save
+    variable_measure = VariableMeature.new
+    variable_measure.collected_measurement_id = collected_measurement.id
+    variable_measure.value = value
+    variable_measure.save
     #collected_measurement = device.collected_measurements.new(:longitude => longitude, :latitude => latitude)   
     
    
