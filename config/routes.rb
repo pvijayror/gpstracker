@@ -65,6 +65,11 @@ Gpstracker::Application.routes.draw do
       resources :devices do
         resources :traced_routes do
           get 'show_trace'
+          get 'heat_map_graphics'
+          get 'graph'
+          collection do
+            get 'choose_route'
+          end
         end
         resources :collected_measurements
         get 'location'

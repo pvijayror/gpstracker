@@ -1,0 +1,37 @@
+.row-fluid
+  .span11
+    #graph(style="min-width: 400px; height: 400px; margin: 0 auto")
+  .span1
+
+= link_to "Back", :back, :class => "btn btn-inverse btn-small"
+
+
+:javascript
+
+  $(function () {
+    var serie = "#{@variable1}".split(",");
+    for(var i=0; i<serie.length; i++) { serie[i] = +serie[i]; } 
+    var chart = new Highcharts.Chart({
+      chart: {
+          //alignTicks: false,
+          type: 'line',
+          renderTo: 'graph'
+      },
+
+      title: {
+          text: 'Traced Route Variable Values'
+      },
+      xAxis: {
+          categories: []
+      },
+      yAxis: {
+          title: {
+              text: 'Variable Value'
+          }
+      },
+      series: [{
+          name: 'Variable 1',
+          data: serie
+      }],
+    });
+  });

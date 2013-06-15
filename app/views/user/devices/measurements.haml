@@ -5,9 +5,11 @@
     %tr
       %th Device
       %th Collected Variables
+      %th Traced Routes
   %tbody
     - devices.each do |x|
       %tr
         %td= x.serial_number
-        %td= link_to "Select", user_device_collected_measurements_path(:device_id => x.id)
+        %td= link_to "Show Variables", user_device_collected_measurements_path(:device_id => x.id)
+        %td= link_to "Show Traced Routes", choose_route_user_device_traced_routes_path(:device_id => x.id)
 

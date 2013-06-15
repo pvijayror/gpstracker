@@ -1,0 +1,26 @@
+%h2.text-center Traced Routes 
+%h5.text-center= "Device: #{traced_routes.last.device.serial_number rescue "-"}"
+%table.table.table-bordered.table-condensed
+  %thead
+    %tr
+      %th ID
+      %th Device (SN)
+      %th Description
+      %th Start Date/Time
+      %th End Date/Time
+      %th End State
+      %th Actions
+
+  %tbody
+    - traced_routes.each do |traced_route|
+      %tr
+        %td= traced_route.id
+        %td= traced_route.device.serial_number
+        %td= traced_route.description
+        %td= traced_route.start_datetime
+        %td= traced_route.end_datetime
+        %td= traced_route.state
+        %td
+          = link_to "Generate Graph", user_device_traced_route_graph_path(:traced_route_id => traced_route.id)
+          = #link_to "Generate Graph", user_device_traced_route_show_trace_path(:device_id => traced_route.device.id, :traced_route_id => traced_route.id), :class => "btn btn-small btn-success"
+= link_to "Back", :back, :class => "btn btn-inverse btn-small"

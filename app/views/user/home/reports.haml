@@ -1,13 +1,6 @@
-%h2 Reports
 
 .login
+  %h2 Metrics
+  %ul(class="nav nav-tabs nav-stacked")
+    %li= link_to "Choose Device", measurements_user_devices_path
 
-  = link_to "Choose Device", measurements_user_devices_path
-  %br
-  %br
-  = link_to "Stationality Analysis", user_stationality_analysis_path
-  %br
-  %br
-  = link_to "Dependency Analysis Report", user_dependency_analysis_path
-  %br
-  %br

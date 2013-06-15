@@ -1,25 +1,27 @@
 %h2.text-center= "Collected Data for Device: #{device.serial_number}"
-
-%table.table.table-bordered.table-condensed
-  %thead
-    %tr
-      %th Date
-      %th Month
-      %th Year
-      %th Longitude
-      %th Latitude
-      - collected_measurements.first.variable_measures.each_with_index do |k,v|
-        %th= "Variable #{v+1}"
-  %tbody
-    - collected_measurements.each do |x|
+- unless collected_measurements.blank?
+  %table.table.table-bordered.table-condensed
+    %thead
       %tr
-        %td= x.created_at.strftime("%A %d at %I:%M%p")
-        %td= x.created_at.strftime("%B")
-        %td= x.created_at.strftime("%Y")
-        %td= x.longitude
-        %td= x.latitude
-        - x.variable_measures.each do |v|
-          %td= v.value
-  
+        %th Date
+        %th Month
+        %th Year
+        %th Longitude
+        %th Latitude
+        - collected_measurements.last.variable_measures.each_with_index do |k,v|
+          %th= "Variable #{v+1}"
+    %tbody
+      - collected_measurements.each do |x|
+        %tr
+          %td= x.created_at.strftime("%A %d at %I:%M%p") rescue nil
+          %td= x.created_at.strftime("%B") rescue nil
+          %td= x.created_at.strftime("%Y") rescue nil
+          %td= x.longitude
+          %td= x.latitude
+          - x.variable_measures.each do |v|
+            %td= v.value
+
+  = will_paginate collected_measurements  
+
 = link_to "Back", :back, :class => "btn btn-inverse btn-small"
-= link_to "Generate Graph", "", :class => "btn btn-info btn-small"
+

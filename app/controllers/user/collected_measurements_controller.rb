@@ -10,7 +10,7 @@ class User::CollectedMeasurementsController < ApplicationController
   end
 
   def collected_measurements
-    @collected_measurements||=device.collected_measurements#.paginate(:page => params[:page])
+    @collected_measurements||=device.collected_measurements.paginate(:page => params[:page])
   end
 
   def device
