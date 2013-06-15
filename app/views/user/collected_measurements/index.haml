@@ -3,21 +3,16 @@
 %table.table.table-bordered.table-condensed
   %thead
     %tr
-
-      %th Select
       %th Date
       %th Month
       %th Year
       %th Longitude
       %th Latitude
-      - collected_measurements.each do |x|
-        - x.variable_measures.each_with_index do |k,v|
-          %th= "Variable #{v+1}"
+      - collected_measurements.first.variable_measures.each_with_index do |k,v|
+        %th= "Variable #{v+1}"
   %tbody
     - collected_measurements.each do |x|
       %tr
-        %td
-          %input{ {type: 'checkbox', class: 'chk', name: 'trsel[]', value: "#{x.id}"} }
         %td= x.created_at.strftime("%A %d at %I:%M%p")
         %td= x.created_at.strftime("%B")
         %td= x.created_at.strftime("%Y")
