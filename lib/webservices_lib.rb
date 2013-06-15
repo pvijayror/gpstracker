@@ -135,6 +135,8 @@ class WebservicesLib
       variable_measure = collected_measurement.variable_measures.new
       variable_measure.update_attributes(:value => value)
       variable_measure.save
+      puts "#{p collected_measurement}"
+      puts "#{p variable_measure}"
       data = {:saved => true}
     else
       data = {:saved => false}
