@@ -78,7 +78,7 @@ class WebservicesLib
     #if WsSecurityLib::Auth.check_api_key(api_key)
       case @req.path
         when "/api/push"
-              resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], @req.params['api_key'], @req.params['variables'], @req.params['value']))
+              resp = insert_device_data(@req.params['longitude'], @req.params['latitude'], @req.params['api_key'], @req.params['variables'], @req.params['value'])
         else
           resp = WsJsonLib.format_messages(nil,"404",nil)
 
