@@ -1,16 +1,20 @@
 .login
   %h2 Checkout
-  %small Enter your card details
 
   = form_tag  "/user/subscriptions", :id => "payment-form" do 
+    .payment-summary
+      %small
+        = "Price: #{@subscription_type.price}" 
+      %br
+      %small
+        = "#{@subscription_type.months} Months Subscription" 
+    .div
+      .payment-errors
+        %noscript You need JavaScript enabled to use this form.
     .div
       %br
       = label_tag :card_number, "Credit Card Number"
       = text_field_tag :card_number, nil, name: nil
-      %br  
-    .div
-      .payment-errors
-        %noscript You need JavaScript enabled to use this form.
     .div
       = label_tag :card_code, "3 Digit Verification Code "
       %small
@@ -24,6 +28,7 @@
       %br
       = select_year nil, {start_year: Date.today.year, end_year: Date.today.year + 15}, {name: nil, id: "card_year"}
       %br
+      = hidden_field_tag "subscription", @subscription_type.id
     = submit_tag "Pay", :class => "btn btn-success"
 
 
