@@ -1,0 +1,134 @@
+
+en:
+  project:
+    title: "PRAIG"
+    url: "https://praig.com"
+    copyright: "Todos los derechos reservados"
+
+  actions:
+    actions: "Actions"
+    add: "Add"
+    are_you_sure: "Are you sure?"
+    back: "Back"
+    check_all: "Check all"
+    created_at: "Created at"
+    destroy: "Delete"
+    edit: "Edit"
+    id: "ID"
+    import: "Import"
+    loading: "Loading"
+    move: "Move"
+    new: "New"
+    please_wait: "Please wait a moment, site is loading"
+    profile: "Profile"
+    remove: "Remove"
+    show: "Show"
+    uncheck_all: "Uncheck all"
+    updated_at: "Updated at"
+    "no": "No"
+    "yes": "Yes"
+
+  alerts:
+    updated_successfully: "Updated successfully!"
+    created_successfully: "Created successfully!"
+    destroyed_successfully: "Successfully deleted!"
+
+  common:
+    my_account: "My Account"
+    sign_out: "Sign Out"
+
+  errors:
+    notices:
+      index: "Page not found"
+
+  buttons:
+    cancel: "Cancel"
+    new: "New"
+    send: "Send"
+
+  controllers:
+    devices: 
+      index: "Devices"
+      show: "Device"
+      new: "New Device"
+    administrators:
+      index: "Administrators"
+      show: "Administrator"
+      new: "New Administrator"
+    users:
+      index: "Users"
+      show: "User"
+      new: "New User"
+    subscription_types:
+      index: "Subscription Types"
+      show: "Subscription Type"
+      new: "New Subscription"
+
+  menu:
+    home: "Home"
+    devices: "Devices"
+    dashboard: "Dashboard"
+
+  activerecord:
+    models:
+      device: "Device"
+      administrator: "Administrator"
+      subscription_type: "Subscription Type"
+    attributes:
+      device:
+        id: "ID"
+        serial_number: "Serial Number"
+        user_id: "User"
+        pin: "Pin"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      administrator:
+        id: "ID"
+        email: "Email"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      user:
+        id: "ID"
+        email: "Email"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      subscription_type:
+        id: "ID"
+        price: "Price"
+        months: "Months"
+        description: "Description"
+        translation: "Translation"
+        created_at: "Created At"
+        updated_at: "Updated At"
+
+  frontend:
+    home:
+      subtitle: "Programa de Rastreo y Análisis de la Información Geoestadística."
+      what_is: "Qué es PRAIG?"
+      what_is_content: "PRAIG Tracking System te brinda la habilidad de rastrear la cantidad de dispositivos que desees usando dispositivos GPS. Adicionalmente puede agregar dispositivos sensoriales para recolectar información del entorno."
+      how_does_it_works: "¿Cómo funciona?"
+      how_does_it_works_content_1: "Primero, regístrese ingresando su información personal."
+      how_does_it_works_content_2: "Luego, elija el plan que más le acomode y realice su suscripción."
+      how_does_it_works_content_3: "Ahora está listo! Solo ingrese sus dispositivos para empezar a rastrearlos."
+      gps_tracking: "Rastreo GPS"
+      gps_tracking_content: "Ubique y rastree los caminos de sus dispositivos usando geolocalización a travez del GPS. Si tienes un smartphone Android, descargate la aplicación!"
+      data_analysis: "Análisis"
+      data_analysis_content: "Tenga acceso a las variables recolectadas por sus dispositivos."
+      graphics_generator: "Generador de gráficas"
+      graphics_generator_content: "Genere gráficas a partir de las variables recolectadas con sus dispositivos."
+    contact_us:
+      contact_us_by: "Contactenos:"
+      phone: "Teléfono"
+      address: "Dirección"
+    how_it_works:
+      step1: "Primero, regístrese. Simplemente ingrese su información personal en el formulario de registro. Luego le llegará un mail con un link para validar su cuenta. Una vez validada la cuenta, ya puede suscribirse!"
+      step2: "Se le va solicitar que se suscriba para poder empezar. Elija la opción que más se acomode a su presupuesto."
+      step3: "Listo! Ahora ingrese los dispositivos que ha adquirido para empezar a rastrearlos."
+    subscribe:
+      months: "meses por solo"
+
+
+
+
+
+

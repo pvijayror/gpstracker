@@ -23,6 +23,7 @@ group :production do
   gem 'pg'
 end
  
+
  
 gem "state_machine"
 gem 'gmaps4rails'
@@ -43,11 +44,10 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+gem 'unicorn'
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'
