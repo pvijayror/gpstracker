@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# Administrator.create(email: "admin@admin.com", password: "12345678", password_confirmation: "12345678") unless Administrator.find_by_email "admin@admin.com"
+Administrator.create(email: "admin@admin.com", password: "12345678", password_confirmation: "12345678") unless Administrator.find_by_email "admin@admin.com"
 # device = Device.create(serial_number: "100089", token: "1q2w3e4r5t")
 # collected_measurement = CollectedMeasurement.new(device_id: device.id, longitude: "77.02", latitude: "12.04")
 # collected_measurement.save(:validate => false)
@@ -67,33 +67,33 @@
 # collected_measurement = CollectedMeasurement.new(device_id: device.id, longitude: "77.02", latitude: "12.04
 #   collected_measurement.save(:validate => false)")
 
-traced_route = Device.find_by_serial_number("111111").traced_routes.new(:description => "Cargo de Uvas", :start_datetime => Time.now)
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "77.02", latitude: "12.04", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# traced_route = Device.find_by_serial_number("111111").traced_routes.new(:description => "Cargo de Uvas", :start_datetime => Time.now)
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "77.02", latitude: "12.04", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "78.02", latitude: "12.11", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "78.02", latitude: "12.11", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "79.02", latitude: "13.04", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "79.02", latitude: "13.04", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "80.02", latitude: "13.34", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "80.02", latitude: "13.34", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "80.82", latitude: "13.44", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "80.82", latitude: "13.44", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "81.02", latitude: "14.04", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "81.02", latitude: "14.04", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "81.52", latitude: "14.14", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "81.52", latitude: "14.14", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "82.32", latitude: "14.24", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "82.32", latitude: "14.24", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
-collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "82.92", latitude: "14.94", traced_route_id: 1)
-collected_measurement.save(:validate => false) 
+# collected_measurement = CollectedMeasurement.new(device_id: 22, longitude: "82.92", latitude: "14.94", traced_route_id: 1)
+# collected_measurement.save(:validate => false) 
 
 
 
