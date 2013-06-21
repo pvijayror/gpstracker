@@ -17,7 +17,7 @@ set :rvm_type, :system
 set :rvm_ruby_string, "ruby-1.9.3-p0@gpstracker"
 
 default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+ssh_options[:forward_agent] = true   
 
 
 after "deploy", "deploy:cleanup" #keep only 5 last releases
