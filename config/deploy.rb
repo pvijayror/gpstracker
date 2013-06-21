@@ -6,12 +6,12 @@ server "172.16.194.128", :web, :app, :db, :primary => true
 
 set :application, "gpstracker"
 set :user, "eightynine"
-set :deploy_to, "/var/www/apps/#{application}"
+set :deploy_to, "/var/www/apps/geotracking/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository,  "git@github.com:glvcto/#{application}.git"
+set :repository,  "git@github.com:glvcto/geotracking.git"
 set :branch, "master"
 set :rvm_type, :system
 set :rvm_ruby_string, "ruby-1.9.3-p0@gpstracker"
