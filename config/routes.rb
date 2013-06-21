@@ -85,40 +85,41 @@ Gpstracker::Application.routes.draw do
         end
       end
       
-  scope "(:locale)", :locale => /en|es/ do
-      match '/dashboard/settings' => 'home#settings'
-      match '/dashboard/account_details' => 'home#account_details'
-      match '/dashboard/subscribe' => 'home#subscribe'
+      scope "(:locale)", :locale => /en|es/ do
+        match '/dashboard/settings' => 'home#settings'
+        match '/dashboard/account_details' => 'home#account_details'
+        match '/dashboard/subscribe' => 'home#subscribe'
 
-      match '/dashboard' => 'home#dashboard'
-      match '/pricing' => 'home#pricing'
-      match '/how_it_works' => 'home#how_it_works'
-      match '/contact_us' => 'home#contact_us'
-      match '/help' => 'home#help'
+        match '/dashboard' => 'home#dashboard'
+        match '/pricing' => 'home#pricing'
+        match '/how_it_works' => 'home#how_it_works'
+        match '/contact_us' => 'home#contact_us'
+        match '/help' => 'home#help'
 
-      match '/reports' => 'home#reports'
-      match '/map_devices' => 'home#map_devices'
-      match '/lineal_regresion' => 'home#lineal_regresion'
-      match '/dependency_analysis' => 'home#dependency_analysis'
-      match '/stationality_analysis' => 'home#stationality_analysis'
-      match '/devices' => 'home#devices'
-      match '/generate_graph' => 'home#generate_graph'
-      match '/variable_history' => 'home#variable_history'
-      root :to => 'home#dashboard'
+        match '/reports' => 'home#reports'
+        match '/map_devices' => 'home#map_devices'
+        match '/lineal_regresion' => 'home#lineal_regresion'
+        match '/dependency_analysis' => 'home#dependency_analysis'
+        match '/stationality_analysis' => 'home#stationality_analysis'
+        match '/devices' => 'home#devices'
+        match '/generate_graph' => 'home#generate_graph'
+        match '/variable_history' => 'home#variable_history'
+        root :to => 'home#dashboard'
+
+      end
+      get "/set_language" => "home#set_language"
+      # You can have the root of your site routed with "root"
+      # just remember to delete public/index.html.
+      # root :to => 'welcome#index'
+      root :to => 'user/home#index'
+      # See how all your routes lay out with "rake routes"
+
+      # This is a legacy wild controller route that's not recommended for RESTful applications.
+      # Note: This route will make all actions in every controller accessible via GET requests.
+      # match ':controller(/:action(/:id))(.:format)'
+      get "*path" => 'user/home#page_404'
+
+  
     end
-
-
-    # You can have the root of your site routed with "root"
-    # just remember to delete public/index.html.
-    # root :to => 'welcome#index'
-    root :to => 'user/home#index'
-    # See how all your routes lay out with "rake routes"
-
-    # This is a legacy wild controller route that's not recommended for RESTful applications.
-    # Note: This route will make all actions in every controller accessible via GET requests.
-    # match ':controller(/:action(/:id))(.:format)'
-    get "*path" => 'user/home#page_404'
-
-  end
   root :to => 'user/home#index'
 end

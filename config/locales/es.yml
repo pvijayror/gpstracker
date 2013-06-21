@@ -1,5 +1,5 @@
 
-en:
+es:
   project:
     title: "PRAIG"
     url: "https://praig.com"
@@ -117,10 +117,12 @@ en:
       graphics_generator: "Generador de gráficas"
       graphics_generator_content: "Genere gráficas a partir de las variables recolectadas con sus dispositivos."
     contact_us:
-      contact_us_by: "Contactenos:"
+      contact_us: "Contáctenos"
+      contact_us_by: "Contáctenos:"
       phone: "Teléfono"
       address: "Dirección"
     how_it_works:
+      how_it_works: "¿Cómo funciona?"
       step1: "Primero, regístrese. Simplemente ingrese su información personal en el formulario de registro. Luego le llegará un mail con un link para validar su cuenta. Una vez validada la cuenta, ya puede suscribirse!"
       step2: "Se le va solicitar que se suscriba para poder empezar. Elija la opción que más se acomode a su presupuesto."
       step3: "Listo! Ahora ingrese los dispositivos que ha adquirido para empezar a rastrearlos."

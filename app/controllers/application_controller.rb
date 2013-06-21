@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
  
   def set_locale
-    I18n.locale = params[:lang] || I18n.default_locale
+    I18n.locale = params[:lang] || params[:locale] || I18n.default_locale
   end  
 
   def after_sign_out_path_for(resource_or_scope)
@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     if current_user
       if current_user.subscriptions.blank? || !current_user.subscriptions.last.active?
         redirect_to user_dashboard_subscribe_path
+      elsif current_user.subscriptions.last.active?
+        if (current_user.subscriptions.last.end_date - Time.now.to_date).to_i < 2
+          flash[:alert] = "Your subscription period is approaching the end on #{current_user.subscriptions.last.end_date}."
+        end
       end
     end
   end

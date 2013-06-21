@@ -16,6 +16,22 @@ class User::HomeController < ApplicationController
     redirect_to root_path
   end
 
+  def set_language
+    if ['es', 'en', 'zh'].include?(params[:id])
+      p params
+      begin
+        params[:url]["#{session[:locale]}"] = params[:id] 
+        session[:locale] = params[:id]
+        redirect_to params[:url]
+      rescue
+        session[:locale] = params[:id]
+        redirect_to :back
+      end
+    else
+      redirect_to :back
+    end
+  end
+
 
 
 end

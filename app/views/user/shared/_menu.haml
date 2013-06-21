@@ -12,9 +12,9 @@
           %li
             = link_to "Pricing", user_pricing_path(:locale => I18n.locale)
           %li
-            = link_to "How it Works", user_how_it_works_path(:locale => I18n.locale)
+            = link_to "#{t("frontend.how_it_works.how_it_works")}", user_how_it_works_path(:locale => I18n.locale)
           %li
-            = link_to "Contact Us", user_contact_us_path(:locale => I18n.locale)
+            = link_to "#{t("frontend.contact_us.contact_us")}", user_contact_us_path(:locale => I18n.locale)
 
         %ul(class="nav pull-right")
           - if current_user || current_administrator

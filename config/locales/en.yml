@@ -117,16 +117,18 @@ en:
       graphics_generator: "Graphics Generator"
       graphics_generator_content: "Generate graphs from the variables sent from your device. See pie charts, bar charts and more."
     contact_us:
+      contact_us: "Contact Us"
       contact_us_by: "Contact us by:"
       phone: "Phone"
       address: "Address"
     how_it_works:
+      how_it_works: "How it Works?"
       step1: "First, register. Just fill up the sign up form with your personal information and you will receive an email with a link to validate your account. Once validated you are ready to subscribe!"
       step2: "You will now be prompt to subscribe in order start using the platform. Just choose the subscription option you find best for your budget."
       step3: "Now you are ready to go! Just register the devices you've purchased to start tracking them."
     subscribe:
       months: "months subscription for just"
-
+    
 
 
 
