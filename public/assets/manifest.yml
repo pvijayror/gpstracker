@@ -9,6 +9,8 @@ background.png: background-a6c4a6bc7989136c83cd880a4f8869ad.png
 background/index.png: background-a6c4a6bc7989136c83cd880a4f8869ad.png
 blue-map-with-red-pin.jpg: blue-map-with-red-pin-70fe03485ff0a83f623cbef58bcaa019.jpg
 blue-map-with-red-pin/index.jpg: blue-map-with-red-pin-70fe03485ff0a83f623cbef58bcaa019.jpg
+budget.jpeg: budget-b97f6d376cda924db060cc7ae4fc422a.jpeg
+budget/index.jpeg: budget-b97f6d376cda924db060cc7ae4fc422a.jpeg
 cars.jpg: cars-1d59eb1cf92576d0a886c348a99a8f77.jpg
 cars/index.jpg: cars-1d59eb1cf92576d0a886c348a99a8f77.jpg
 cvv.jpg: cvv-f2c7d02d6f4cd0ee1d1e6e5c637c3f74.jpg
@@ -23,10 +25,16 @@ dubare-elephant-camp-coorg.jpg: dubare-elephant-camp-coorg-8c7d86e938218aca82a30
 dubare-elephant-camp-coorg/index.jpg: dubare-elephant-camp-coorg-8c7d86e938218aca82a3072380761126.jpg
 evcc.jpg: evcc-ed1ebd04692987bf559fddda44e08499.jpg
 evcc/index.jpg: evcc-ed1ebd04692987bf559fddda44e08499.jpg
+form.jpeg: form-fc04980cd2c13d4617115ddf8420521b.jpeg
+form/index.jpeg: form-fc04980cd2c13d4617115ddf8420521b.jpeg
 ga_network_3-lg.jpg: ga_network_3-lg-61bf24e680634d3d53009f8513fdd160.jpg
 ga_network_3-lg/index.jpg: ga_network_3-lg-61bf24e680634d3d53009f8513fdd160.jpg
+gps.jpg: gps-f3c3d2c067ed573bf50fa65f3b81e326.jpg
+gps/index.jpg: gps-f3c3d2c067ed573bf50fa65f3b81e326.jpg
 gps.png: gps-84e9cbc5806c44e08f7747c891c71110.png
 gps/index.png: gps-84e9cbc5806c44e08f7747c891c71110.png
+gps_diagram.gif: gps_diagram-608d189b99208b04ab6267169e8ee135.gif
+gps_diagram/index.gif: gps_diagram-608d189b99208b04ab6267169e8ee135.gif
 insects.jpg: insects-554cdb3535d445251a33b49907c854c5.jpg
 insects/index.jpg: insects-554cdb3535d445251a33b49907c854c5.jpg
 linealregresion.gif: linealregresion-4828eeb696b8e005bc0b603eb7e5b51d.gif
