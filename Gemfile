@@ -19,9 +19,9 @@ group :development do
 end
 
  
-group :production do
-  gem 'pg'
-end
+# group :production do
+#   gem 'pg'
+# end
  
 
  
@@ -45,9 +45,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # gem 'jbuilder'
 
 
-gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'unicorn', '4.3.1'
+gem 'capistrano', '2.12.0'
+gem 'rvm-capistrano', '1.2.7'
 
 # To use debugger
 # gem 'debugger'
