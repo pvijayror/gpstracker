@@ -1,7 +1,7 @@
 production:
   adapter: mysql2
   encoding: utf8
-  database: blog_production
+  database: geotracking_production
   pool: 5
   username: root
   password: razm
