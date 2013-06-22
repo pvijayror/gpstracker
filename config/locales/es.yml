@@ -34,8 +34,8 @@ es:
     destroyed_successfully: "Successfully deleted!"
 
   common:
-    my_account: "My Account"
-    sign_out: "Sign Out"
+    my_account: "Mi Cuenta"
+    sign_out: "Salir"
 
   errors:
     notices:
@@ -103,6 +103,7 @@ es:
 
   frontend:
     home:
+      home: "Inicio"
       subtitle: "Programa de Rastreo y Análisis de la Información Geoestadística."
       what_is: "Qué es PRAIG?"
       what_is_content: "PRAIG Tracking System te brinda la habilidad de rastrear la cantidad de dispositivos que desees usando dispositivos GPS. Adicionalmente puede agregar dispositivos sensoriales para recolectar información del entorno."
@@ -121,6 +122,8 @@ es:
       contact_us_by: "Contáctenos:"
       phone: "Teléfono"
       address: "Dirección"
+    pricing:
+      pricing: "Precio"
     how_it_works:
       how_it_works: "¿Cómo funciona?"
       step1: "Primero, regístrese. Simplemente ingrese su información personal en el formulario de registro. Luego le llegará un mail con un link para validar su cuenta. Una vez validada la cuenta, ya puede suscribirse!"

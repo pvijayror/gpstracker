@@ -103,6 +103,7 @@ en:
 
   frontend:
     home:
+      home: "Home"
       subtitle: "Tracking and Analysis of Geostatistic Information"
       what_is: "What is PRAIG"
       what_is_content: "PRAIG Tracking System gives you the ability to track as many devices as you want using GPS devices, you can also add aditional sensorial devices to retrieve environment data."
@@ -121,6 +122,8 @@ en:
       contact_us_by: "Contact us by:"
       phone: "Phone"
       address: "Address"
+    pricing:
+      pricing: "Pricing"
     how_it_works:
       how_it_works: "How it Works?"
       step1: "First, register. Just fill up the sign up form with your personal information and you will receive an email with a link to validate your account. Once validated you are ready to subscribe!"

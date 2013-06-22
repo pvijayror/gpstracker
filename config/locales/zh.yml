@@ -1,0 +1,139 @@
+
+zh:
+  project:
+    title: "PRAIG"
+    url: "https://praig.com"
+    copyright: "保留所有权利"
+
+  actions:
+    actions: "Actions"
+    add: "Add"
+    are_you_sure: "Are you sure?"
+    back: "Back"
+    check_all: "Check all"
+    created_at: "Created at"
+    destroy: "Delete"
+    edit: "Edit"
+    id: "ID"
+    import: "Import"
+    loading: "Loading"
+    move: "Move"
+    new: "New"
+    please_wait: "Please wait a moment, site is loading"
+    profile: "Profile"
+    remove: "Remove"
+    show: "Show"
+    uncheck_all: "Uncheck all"
+    updated_at: "Updated at"
+    "no": "No"
+    "yes": "Yes"
+
+  alerts:
+    updated_successfully: "更新成功！"
+    created_successfully: "创建成功！"
+    destroyed_successfully: "成功删除！"
+
+  common:
+    my_account: "我的帐户"
+    sign_out: "登出"
+
+  errors:
+    notices:
+      index: "Page not found"
+
+  buttons:
+    cancel: "Cancel"
+    new: "New"
+    send: "Send"
+
+  controllers:
+    devices: 
+      index: "Devices"
+      show: "Device"
+      new: "New Device"
+    administrators:
+      index: "Administrators"
+      show: "Administrator"
+      new: "New Administrator"
+    users:
+      index: "Users"
+      show: "User"
+      new: "New User"
+    subscription_types:
+      index: "Subscription Types"
+      show: "Subscription Type"
+      new: "New Subscription"
+
+  menu:
+    home: "Home"
+    devices: "Devices"
+    dashboard: "Dashboard"
+
+  activerecord:
+    models:
+      device: "Device"
+      administrator: "Administrator"
+      subscription_type: "Subscription Type"
+    attributes:
+      device:
+        id: "ID"
+        serial_number: "Serial Number"
+        user_id: "User"
+        pin: "Pin"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      administrator:
+        id: "ID"
+        email: "Email"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      user:
+        id: "ID"
+        email: "Email"
+        created_at: "Created At"
+        updated_at: "Updated At"
+      subscription_type:
+        id: "ID"
+        price: "Price"
+        months: "Months"
+        description: "Description"
+        translation: "Translation"
+        created_at: "Created At"
+        updated_at: "Updated At"
+
+  frontend:
+    home:
+      home: "引发"
+      subtitle: "跟踪和分析程序信息统计学。"
+      what_is: "什么是 PRAIG?"
+      what_is_content: "PRAIG Tracking System 使您能够跟踪你想使用GPS设备的设备的数量。此外，您可以添加设备从环境中收集感觉信息。"
+      how_does_it_works: "它是如何工作的？"
+      how_does_it_works_content_1: "首先，注册，输入您的个人信息。"
+      how_does_it_works_content_2: "然后，选择最适合你的计划，让你的订阅。"
+      how_does_it_works_content_3: "现在，你准备好了！只要把您的设备开始跟踪他们。"
+      gps_tracking: "GPS追踪"
+      gps_tracking_content: "找到并跟踪他们的设备使用GPS地理位置travez的路径。如果你有一个Android智能手机，下载应用程序了！"
+      data_analysis: "分析"
+      data_analysis_content: "访问为他们的设备中收集到的变量。"
+      graphics_generator: "图形产生器"
+      graphics_generator_content: "生成图表与他们的设备，从收集到的变量。"
+    contact_us:
+      contact_us: "联系我们"
+      contact_us_by: "联系我们:"
+      phone: "电话"
+      address: "地址"
+    pricing:
+      pricing: "价格"
+    how_it_works:
+      how_it_works: "它是如何工作的？"
+      step1: "首先，注册。只要输入您的个人信息登记表。然后你会收到一封电子邮件的链接以验证您的帐户。一旦验证您的帐户，您可以订阅！"
+      step2: "他会要求你签署以开始浏览网页。选择选择适合您的预算。"
+      step3: "准备好了！现在，输入您购买的设备开始跟踪他们。"
+    subscribe:
+      months: "仅几个月"
+
+
+
+
+
+

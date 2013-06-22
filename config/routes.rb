@@ -85,7 +85,7 @@ Gpstracker::Application.routes.draw do
         end
       end
       
-      scope "(:locale)", :locale => /en|es/ do
+      scope "(:locale)", :locale => /en|es|zh/ do
         match '/dashboard/settings' => 'home#settings'
         match '/dashboard/account_details' => 'home#account_details'
         match '/dashboard/subscribe' => 'home#subscribe'
