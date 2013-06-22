@@ -6,6 +6,13 @@ class Device < ActiveRecord::Base
   has_many   :traced_routes
   has_many   :api_keys
 
+  validates :serial_number, :presence => true
+  validates :serial_number, :uniqueness => true
+  validates :pin          , :presence => true
+  validates :serial_number, :length => { :is => 8 }
+  validates :pin          , :length => { :is => 4 }
+
+
   class << self
     def find_for_authentication serial_number
       Device.find_by_disabled_and_serial_number(false, serial_number)
