@@ -8,9 +8,9 @@
       .container.nav-collapse
         %ul.nav
           %li
-            = link_to t("menu.home"), root_path(:locale => I18n.locale)
+            = link_to t("frontend.home.home"), root_path(:locale => I18n.locale)
           %li
-            = link_to "Pricing", user_pricing_path(:locale => I18n.locale)
+            = link_to "#{t("frontend.pricing.pricing")}", user_pricing_path(:locale => I18n.locale)
           %li
             = link_to "#{t("frontend.how_it_works.how_it_works")}", user_how_it_works_path(:locale => I18n.locale)
           %li

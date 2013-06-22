@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   has_many :devices
   has_many :subscriptions
 
+  validates :email,       :presence => true
+  validates :first_name,  :presence => true
+  validates :last_name,   :presence => true
+
   def has_active_subscription?
     unless subscriptions.blank?
       subscriptions.last.end_date > Time.now.to_date
